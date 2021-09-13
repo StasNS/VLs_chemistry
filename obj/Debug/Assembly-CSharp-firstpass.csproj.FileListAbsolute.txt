@@ -1,0 +1,2 @@
+D:\Unity\Projects\New Unity Project (1)\obj\Debug\Assembly-CSharp-firstpass.csproj.AssemblyReference.cache
+D:\Unity\Projects\New Unity Project (1)\obj\Debug\Assembly-CSharp-firstpass.csproj.CoreCompileInputs.cache
