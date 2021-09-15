@@ -47,8 +47,8 @@
      <Compile Include="Assets\Scripts\NewDragNDrop.cs" />
      <Compile Include="Assets\Cable-Component-master\Assets\CableComponent\Scripts\CableComponent.cs" />
      <Compile Include="Assets\Scripts\Test.cs" />
-     <Compile Include="Assets\Scripts\Test1.cs" />
      <Compile Include="Assets\Scripts\Wobble.cs" />
+     <Compile Include="Assets\Scripts\Test1.cs" />
      <None Include="Assets\Resources\MetodText.txt" />
      <None Include="Assets\Cable-Component-master\ProjectSettings\ProjectVersion.txt" />
      <None Include="Assets\Resources\ControlText.txt" />
@@ -273,6 +273,9 @@
     </Reference>
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>D:\Unity\2020.3.15f2\Editor\Data\Managed\UnityEngine\UnityEditor.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+        <HintPath>D:\Project\VLs_chemistry\Library\ScriptAssemblies\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
         <HintPath>D:\Project\VLs_chemistry\Library\PackageCache\com.unity.nuget.newtonsoft-json@2.0.0\Runtime\Newtonsoft.Json.dll</HintPath>
@@ -690,10 +693,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{0f6ed17a-a3bc-471c-838c-6f0dc60a4529}</Project>
-      <Name>Assembly-CSharp-firstpass</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
