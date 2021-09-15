@@ -52,7 +52,6 @@ public class AnimController : MonoBehaviour
                 GameObject.Find("KolbaCylinder1").transform.position == GameObject.Find("PlaceKolbaCylinder1").transform.position &&
                 GameObject.Find("CylinderLiq").activeInHierarchy && Kostil == 3)
                 {
-                    Debug.Log("Still here");
                     Quaternion targetArrow = Quaternion.Euler(ObjAnim[i].eulerAngles.x, ObjAnim[i].eulerAngles.y, 70);
                     ObjAnim[i].rotation = Quaternion.Lerp(ObjAnim[i].rotation, targetArrow, speedArrow * Time.deltaTime);
                 }
@@ -69,7 +68,7 @@ public class AnimController : MonoBehaviour
         switch (playcount)
         {
             case 1:
-                var target = new Vector3(obj.position.x, 1.42f, obj.position.z);
+                var target = new Vector3(obj.position.x, 1.45f, obj.position.z);
                 var children = obj.GetComponentInChildren<Transform>();
                 obj.position = Vector3.MoveTowards(obj.position, target, Time.deltaTime * speedAnim);
 
@@ -123,7 +122,7 @@ public class AnimController : MonoBehaviour
                 }
                 break;
             case 3:
-                var target2 = new Vector3(obj.position.x, 1.43f, obj.position.z);
+                var target2 = new Vector3(obj.position.x, 1.471f, obj.position.z);
 
                 obj.position = Vector3.MoveTowards(obj.position, target2, Time.deltaTime * speedAnim);
 
