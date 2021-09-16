@@ -29,7 +29,7 @@ public class UIController : MonoBehaviour
             ButtonActrivator();
         }
         else
-            if (clickcount == -1 || clickcount == 0)
+        if (clickcount == -1 || clickcount == 0)
         {
             _textField.text = "";
             _textInfo.Clear();

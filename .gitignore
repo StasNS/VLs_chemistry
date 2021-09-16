@@ -20,3 +20,6 @@ Temp/UnityLockfile
 Temp/workerlic
 *.log
 *.log
+Library/ArtifactDB
+Library/SourceAssetDB
+*.log
