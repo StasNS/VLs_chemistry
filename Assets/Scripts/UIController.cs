@@ -9,17 +9,10 @@ public class UIController : MonoBehaviour
     private List<string> _textInfo = new List<string>();
     private int iterator = 0;
 
-    #region Mono
-
-    private void Start()
-    {
-        GetText();
-    }
-    #endregion
     #region TextReader
-    private List<string> GetText()
+    private List<string> GetText(string File_Name)
     {
-        TextAsset data = (TextAsset)Resources.Load("ControlText");
+        TextAsset data = (TextAsset)Resources.Load(File_Name);
         string[] tmp = data.text.Split('\n');
         _textInfo.AddRange(tmp);
         return _textInfo;
@@ -28,9 +21,10 @@ public class UIController : MonoBehaviour
     #region TurnPages
     private void CheckEndOfText(int clickcount)
     {
-        if (clickcount == _textInfo.Count)
+        if (clickcount == _textInfo.Count + 1)
         {
             _textField.text = "";
+            _textInfo.Clear();
             iterator = 0;
             ButtonActrivator();
         }
@@ -38,32 +32,40 @@ public class UIController : MonoBehaviour
             if (clickcount == -1 || clickcount == 0)
         {
             _textField.text = "";
+            _textInfo.Clear();
             iterator = 0;
             ButtonActrivator();
         }
     }
     public void Next()
     {
+        if (iterator != _textInfo.Count) //костыль
+        {
+            _textField.text = _textInfo[iterator];
+        }
         iterator++;
+        CheckEndOfText(iterator);
+    }
+    public void Prev()
+    {
+        iterator--;
         if (iterator != _textInfo.Count) //костыль
         {
             _textField.text = _textInfo[iterator];
         }
         CheckEndOfText(iterator);
     }
-    public void Prev()
-    {
-        iterator--;
-        CheckEndOfText(iterator);
-        if (iterator > _textInfo.Count) //костыль
-        {
-            _textField.text = _textInfo[iterator];
-        }
-    }
     #endregion 
     #region MainButtons
-    public void ShowControl()
+    public void Vvodnii_But()
     {
+        GetText("ControlText");
+        ButtonActrivator();
+        _textField.text = "Для перемещения используйте кнопки next и prev";
+    }
+    public void Metod_But()
+    {
+        GetText("MetodText");
         ButtonActrivator();
         _textField.text = "Для перемещения используйте кнопки next и prev";
     }

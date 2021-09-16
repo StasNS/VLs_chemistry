@@ -319,7 +319,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6553831132328304757}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: ShowControl
+        m_MethodName: Vvodnii_But
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6086,7 +6086,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 695174920}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6553831132328304757}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: Metod_But
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &695174920
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15013,7 +15025,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 33476b825fe8be84f86fa7a215729849, type: 2}
+  - {fileID: 2100000, guid: 8250a8bf9156ddc4d9ea5214c8865bf3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
