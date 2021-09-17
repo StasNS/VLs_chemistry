@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Volt_Scale_Mat
-  m_Shader: {fileID: -6465566751694194690, guid: a34301efb6a1eab488ff0da54a891251, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: aa63de2acf4d87a42ba6f269808536ab, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: bb62f7078db45d94fa168e0241ada541, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0.4, y: -14.89}
     - _BumpMap:
@@ -44,7 +44,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: bb62f7078db45d94fa168e0241ada541, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0.4, y: -14.89}
     - _MetallicGlossMap:
@@ -65,6 +65,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_6d01cf9b81e94df79f2facb0180d7b66_Out_0:
+        m_Texture: {fileID: 2800000, guid: 0d360e9c8fa185b46b3992891e487724, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2DAsset_8c7f05c730be4747b8b9a6cb347597ab_Out_0:
