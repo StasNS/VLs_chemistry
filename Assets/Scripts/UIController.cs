@@ -7,7 +7,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private Text _textField;
     [SerializeField] private List<Button> _button;
     private List<string> _textInfo = new List<string>();
-    private int iterator = 0;
+    private int iterator = -1;
 
     #region TextReader
     private List<string> GetText(string File_Name)
@@ -21,39 +21,40 @@ public class UIController : MonoBehaviour
     #region TurnPages
     private void CheckEndOfText(int clickcount)
     {
-        if (clickcount == _textInfo.Count + 1)
+        if (clickcount == _textInfo.Count)
         {
             _textField.text = "";
             _textInfo.Clear();
-            iterator = 0;
+            iterator = -1;
             ButtonActrivator();
         }
         else
-        if (clickcount == -1 || clickcount == 0)
+        if (clickcount == -1)
         {
             _textField.text = "";
             _textInfo.Clear();
-            iterator = 0;
+            iterator = -1;
             ButtonActrivator();
         }
     }
     public void Next()
     {
+        iterator++;
         if (iterator != _textInfo.Count) //костыль
         {
             _textField.text = _textInfo[iterator];
         }
-        iterator++;
         CheckEndOfText(iterator);
     }
     public void Prev()
     {
         iterator--;
-        if (iterator != _textInfo.Count) //костыль
+        if (iterator != _textInfo.Count && iterator >= 0) //костыль
         {
             _textField.text = _textInfo[iterator];
         }
-        CheckEndOfText(iterator);
+        else
+            CheckEndOfText(iterator);
     }
     #endregion 
     #region MainButtons
@@ -61,13 +62,13 @@ public class UIController : MonoBehaviour
     {
         GetText("ControlText");
         ButtonActrivator();
-        _textField.text = "Для перемещения используйте кнопки next и prev";
+        Next();
     }
     public void Metod_But()
     {
         GetText("MetodText");
         ButtonActrivator();
-        _textField.text = "Для перемещения используйте кнопки next и prev";
+        Next();
     }
     #endregion
     private void ButtonActrivator()
