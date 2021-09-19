@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637671478906615819
-    m_Hash: 1094064924
+      ticks: 637676374303656073
+    m_Hash: 870385778
   m_LockFileStatus:
     m_FilePath: D:/Project/VLs_chemistry/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637671478906710014
-    m_Hash: 3778954648
+      ticks: 637676374303745827
+    m_Hash: 4156873983
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
@@ -1124,6 +1124,140 @@ m_PackageAssets:
         type: 
         url: 
         revision: 
+        path: 
+    - packageId: com.unity.visualeffectgraph@10.5.1
+      testable: 0
+      isDirectDependency: 1
+      version: 10.5.1
+      source: 1
+      resolvedPath: D:\Project\VLs_chemistry\Library\PackageCache\com.unity.visualeffectgraph@10.5.1
+      assetPath: Packages/com.unity.visualeffectgraph
+      name: com.unity.visualeffectgraph
+      displayName: Visual Effect Graph
+      author:
+        name: 
+        email: 
+        url: 
+      category: 
+      type: 
+      description: The Visual Effect Graph is a node based visual effect editor.
+        It allows you to author next generation visual effects that Unity simulates
+        directly on the GPU. The Visual Effect Graph is production-ready for the
+        High Definition Render Pipeline and runs on all platforms supported by it.
+        Full support for the Universal Render Pipeline and compatible mobile devices
+        is still in development.
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 4.3.0-preview
+        - 4.6.0-preview
+        - 4.8.0-preview
+        - 4.9.0-preview
+        - 4.10.0-preview
+        - 5.2.0-preview
+        - 5.2.1-preview
+        - 5.2.3-preview
+        - 5.3.1-preview
+        - 5.6.1-preview
+        - 5.7.2-preview
+        - 5.8.2-preview
+        - 5.10.0-preview
+        - 5.13.0-preview
+        - 5.16.1-preview
+        - 6.5.2-preview
+        - 6.5.3-preview
+        - 6.7.1-preview
+        - 6.9.0-preview
+        - 6.9.1-preview
+        - 6.9.2-preview
+        - 7.0.0
+        - 7.0.1
+        - 7.1.1
+        - 7.1.2
+        - 7.1.5
+        - 7.1.6
+        - 7.1.7
+        - 7.1.8
+        - 7.2.0
+        - 7.2.1
+        - 7.3.1
+        - 7.4.1
+        - 7.4.2
+        - 7.4.3
+        - 7.5.1
+        - 7.5.2
+        - 7.5.3
+        - 7.6.0
+        - 7.7.0
+        - 7.7.1
+        - 8.0.1
+        - 8.1.0
+        - 8.2.0
+        - 8.3.1
+        - 9.0.0-preview.13
+        - 9.0.0-preview.33
+        - 9.0.0-preview.54
+        - 9.0.0-preview.71
+        - 10.0.0-preview.27
+        - 10.1.0
+        - 10.2.0
+        - 10.2.1
+        - 10.2.2
+        - 10.3.1
+        - 10.3.2
+        - 10.4.0
+        - 10.5.0
+        - 10.5.1
+        - 10.6.0
+        compatible:
+        - 10.5.0
+        - 10.5.1
+        - 10.6.0
+        verified: 10.5.1
+      dependencies:
+      - name: com.unity.shadergraph
+        version: 10.5.1
+      - name: com.unity.render-pipelines.core
+        version: 10.5.1
+      resolvedDependencies:
+      - name: com.unity.shadergraph
+        version: 10.5.1
+      - name: com.unity.render-pipelines.core
+        version: 10.5.1
+      - name: com.unity.ugui
+        version: 1.0.0
+      - name: com.unity.modules.ui
+        version: 1.0.0
+      - name: com.unity.modules.imgui
+        version: 1.0.0
+      - name: com.unity.searcher
+        version: 4.3.2
+      keywords:
+      - vfx
+      - visualeffect
+      - graph
+      - effect
+      - particles
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637605796850000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: git+https://github.com/Unity-Technologies/Graphics.git
+        revision: 73f32e8fcc2d0cbf3b73a16a5e30eb5cede41576
         path: 
     - packageId: com.unity.modules.ai@1.0.0
       testable: 0
@@ -2867,67 +3001,6 @@ m_PackageAssets:
         url: 
         revision: 
         path: 
-    - packageId: com.unity.ext.nunit@1.0.6
-      testable: 0
-      isDirectDependency: 0
-      version: 1.0.6
-      source: 1
-      resolvedPath: D:\Project\VLs_chemistry\Library\PackageCache\com.unity.ext.nunit@1.0.6
-      assetPath: Packages/com.unity.ext.nunit
-      name: com.unity.ext.nunit
-      displayName: Custom NUnit
-      author:
-        name: 
-        email: 
-        url: 
-      category: Libraries
-      type: 
-      description: Custom version of the nunit package build to work with Unity.
-        Used by the Unity Test Framework.
-      status: 4
-      errors: []
-      versions:
-        all:
-        - 0.1.5-preview
-        - 0.1.6-preview
-        - 0.1.9-preview
-        - 1.0.0
-        - 1.0.5
-        - 1.0.6
-        compatible:
-        - 0.1.5-preview
-        - 0.1.6-preview
-        - 0.1.9-preview
-        - 1.0.0
-        - 1.0.5
-        - 1.0.6
-        verified: 1.0.6
-      dependencies: []
-      resolvedDependencies: []
-      keywords:
-      - nunit
-      - unittest
-      - test
-      registry:
-        id: main
-        name: 
-        url: https://packages.unity.com
-        scopes: []
-        isDefault: 1
-        capabilities: 7
-      hasRegistry: 1
-      hideInEditor: 1
-      entitlements:
-        isAllowed: 1
-      isAssetStorePackage: 0
-      datePublishedTicks: 637429759280000000
-      documentationUrl: 
-      hasRepository: 1
-      repository:
-        type: git
-        url: https://github.cds.internal.unity3d.com/unity/com.unity.ext.nunit.git
-        revision: 29ea4d6504a5f58fb3a6934db839aa80ae6d9d88
-        path: 
     - packageId: com.unity.render-pipelines.core@10.5.1
       testable: 0
       isDirectDependency: 0
@@ -3081,6 +3154,67 @@ m_PackageAssets:
         type: git
         url: git+https://github.com/Unity-Technologies/Graphics.git
         revision: 73f32e8fcc2d0cbf3b73a16a5e30eb5cede41576
+        path: 
+    - packageId: com.unity.ext.nunit@1.0.6
+      testable: 0
+      isDirectDependency: 0
+      version: 1.0.6
+      source: 1
+      resolvedPath: D:\Project\VLs_chemistry\Library\PackageCache\com.unity.ext.nunit@1.0.6
+      assetPath: Packages/com.unity.ext.nunit
+      name: com.unity.ext.nunit
+      displayName: Custom NUnit
+      author:
+        name: 
+        email: 
+        url: 
+      category: Libraries
+      type: 
+      description: Custom version of the nunit package build to work with Unity.
+        Used by the Unity Test Framework.
+      status: 4
+      errors: []
+      versions:
+        all:
+        - 0.1.5-preview
+        - 0.1.6-preview
+        - 0.1.9-preview
+        - 1.0.0
+        - 1.0.5
+        - 1.0.6
+        compatible:
+        - 0.1.5-preview
+        - 0.1.6-preview
+        - 0.1.9-preview
+        - 1.0.0
+        - 1.0.5
+        - 1.0.6
+        verified: 1.0.6
+      dependencies: []
+      resolvedDependencies: []
+      keywords:
+      - nunit
+      - unittest
+      - test
+      registry:
+        id: main
+        name: 
+        url: https://packages.unity.com
+        scopes: []
+        isDefault: 1
+        capabilities: 7
+      hasRegistry: 1
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 637429759280000000
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: https://github.cds.internal.unity3d.com/unity/com.unity.ext.nunit.git
+        revision: 29ea4d6504a5f58fb3a6934db839aa80ae6d9d88
         path: 
     - packageId: com.unity.searcher@4.3.2
       testable: 0

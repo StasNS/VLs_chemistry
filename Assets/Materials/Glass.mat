@@ -21,12 +21,12 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Glass
-  m_Shader: {fileID: -6465566751694194690, guid: 41d8f0f46b06c404fbabf1120511a398, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 484c9a6b32b3b8248b365798451f3ba7, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 4000
+  m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -89,6 +89,8 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_217891439f0b487c9e089f77849618dd: 0.01
+    - Vector1_9594fd36e20d4bbca0bef4b641ac8b1b: 1.5
     - Vector1_b802a8a12e154fed80436a2a9d876ec3: 0.05
     - _AlphaClip: 0
     - _Blend: 0
