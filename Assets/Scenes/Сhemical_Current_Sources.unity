@@ -675,7 +675,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ca98e98b5b5fef40a2bac63d4a65f5d, type: 2}
+  - {fileID: 2100000, guid: 85f9aa67ae60200498396a5fe4346637, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5949,6 +5949,7 @@ GameObject:
   - component: {fileID: 656205711}
   - component: {fileID: 656205713}
   - component: {fileID: 656205712}
+  - component: {fileID: 656205714}
   m_Layer: 0
   m_Name: WaterKolba
   m_TagString: Untagged
@@ -6019,6 +6020,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 656205710}
   m_Mesh: {fileID: -7388668153022497437, guid: 82e36f1a459edee4a8fbdd84acff680f, type: 3}
+--- !u!114 &656205714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 656205710}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f457d7a40354347b73be928df9abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxWobble: 0.03
+  WobbleSpeed: 1
+  Recovery: 1
 --- !u!1 &694443144
 GameObject:
   m_ObjectHideFlags: 0
@@ -7426,7 +7442,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ca98e98b5b5fef40a2bac63d4a65f5d, type: 2}
+  - {fileID: 2100000, guid: 85f9aa67ae60200498396a5fe4346637, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12781,7 +12797,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ca98e98b5b5fef40a2bac63d4a65f5d, type: 2}
+  - {fileID: 2100000, guid: 85f9aa67ae60200498396a5fe4346637, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -12934,7 +12950,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &1973642370
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -13432,7 +13448,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ca98e98b5b5fef40a2bac63d4a65f5d, type: 2}
+  - {fileID: 2100000, guid: 85f9aa67ae60200498396a5fe4346637, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13876,7 +13892,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ca98e98b5b5fef40a2bac63d4a65f5d, type: 2}
+  - {fileID: 2100000, guid: 85f9aa67ae60200498396a5fe4346637, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14720,6 +14736,7 @@ GameObject:
   - component: {fileID: 7127188966248508325}
   - component: {fileID: 5440240566062311656}
   - component: {fileID: 1951551634467283751}
+  - component: {fileID: 3153270060454949260}
   m_Layer: 0
   m_Name: WaterKolba
   m_TagString: Untagged
@@ -14727,6 +14744,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &3153270060454949260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3153270060454949259}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80f457d7a40354347b73be928df9abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxWobble: 0.03
+  WobbleSpeed: 1
+  Recovery: 1
 --- !u!1 &3288239575635025251
 GameObject:
   m_ObjectHideFlags: 0
@@ -15482,7 +15514,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ca98e98b5b5fef40a2bac63d4a65f5d, type: 2}
+  - {fileID: 2100000, guid: 85f9aa67ae60200498396a5fe4346637, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15665,7 +15697,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ca98e98b5b5fef40a2bac63d4a65f5d, type: 2}
+  - {fileID: 2100000, guid: 85f9aa67ae60200498396a5fe4346637, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15914,7 +15946,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ca98e98b5b5fef40a2bac63d4a65f5d, type: 2}
+  - {fileID: 2100000, guid: 85f9aa67ae60200498396a5fe4346637, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -21054,7 +21086,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ca98e98b5b5fef40a2bac63d4a65f5d, type: 2}
+  - {fileID: 2100000, guid: 85f9aa67ae60200498396a5fe4346637, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
