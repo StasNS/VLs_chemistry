@@ -38,7 +38,7 @@ public class TriggerSphere : MonoBehaviour
             if (isCorrectContainer)
             {
                 Vector3 direction = Сontainer[i].transform.position - transform.position;
-
+                
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), speed * Time.deltaTime);
 
                 if (angleY >= 0 && angleY < 60 || angleX >= 0 && angleX < 60)
