@@ -44,13 +44,12 @@
      <Compile Include="Assets\Scripts\Test1.cs" />
      <Compile Include="Assets\Scripts\TriggerSphere.cs" />
      <Compile Include="Assets\Scripts\UIController.cs" />
-     <Compile Include="Assets\Cable-Component-master\Assets\CableComponent\Scripts\CableParticle.cs" />
+     <Compile Include="Assets\Scripts\CableParticle.cs" />
      <Compile Include="Assets\Scripts\TestTest.cs" />
      <Compile Include="Assets\Scripts\NewDragNDrop.cs" />
-     <Compile Include="Assets\Cable-Component-master\Assets\CableComponent\Scripts\CableComponent.cs" />
+     <Compile Include="Assets\Scripts\CableComponent.cs" />
      <Compile Include="Assets\Scripts\Test.cs" />
      <None Include="Assets\Resources\MetodText.txt" />
-     <None Include="Assets\Cable-Component-master\ProjectSettings\ProjectVersion.txt" />
      <None Include="Assets\Resources\ControlText.txt" />
     <Reference Include="UnityEngine">
         <HintPath>D:\Unity\2020.3.15f2\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
