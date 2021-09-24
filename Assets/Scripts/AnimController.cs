@@ -103,9 +103,10 @@ public class AnimController : MonoBehaviour
                     {
                         foreach (Transform child in children1)
                         {
-                            child.gameObject.GetComponent<Renderer>().material.color = Color.red;
+                            child.gameObject.GetComponent<Renderer>().material.color = Color.grey;
                         }
-                        obj.GetComponent<Renderer>().material.color = Color.red;
+                        obj.GetComponent<Renderer>().material.color = Color.grey;
+
                         tydaobratno = false;
                     }
                 }
