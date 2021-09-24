@@ -52,7 +52,7 @@ public class AnimController : MonoBehaviour
                 GameObject.Find("KolbaCylinder1").transform.position == GameObject.Find("PlaceKolbaCylinder1").transform.position &&
                 GameObject.Find("CylinderLiq").activeInHierarchy && Kostil == 3)
                 {
-                    Quaternion targetArrow = Quaternion.Euler(ObjAnim[i].eulerAngles.x, ObjAnim[i].eulerAngles.y, 70);
+                    Quaternion targetArrow = Quaternion.Euler(ObjAnim[i].eulerAngles.x, ObjAnim[i].eulerAngles.y, 112);
                     ObjAnim[i].rotation = Quaternion.Lerp(ObjAnim[i].rotation, targetArrow, speedArrow * Time.deltaTime);
                 }
             }
