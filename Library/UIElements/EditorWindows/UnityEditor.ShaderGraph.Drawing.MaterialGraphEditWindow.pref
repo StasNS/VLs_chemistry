@@ -36,6 +36,8 @@ MonoBehaviour:
   m_Values:
   - '{}'
   - '{}'
+  - '{"position":{"x":420.0,"y":13.0,"z":0.0},"scale":{"x":0.8695651888847351,"y":0.8695651888847351,"z":1.0}}'
+  - '{"m_Version":11,"m_SelectedElementsArray":[]}'
   - '{}'
   - '{}'
   - '{}'
@@ -52,5 +54,3 @@ MonoBehaviour:
   - '{}'
   - '{}'
   - '{}'
-  - '{"position":{"x":955.0,"y":387.0,"z":0.0},"scale":{"x":0.7561436891555786,"y":0.7561436891555786,"z":1.0}}'
-  - '{"m_Version":15,"m_SelectedElementsArray":[]}'

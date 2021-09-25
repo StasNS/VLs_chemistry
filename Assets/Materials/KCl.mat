@@ -26,7 +26,7 @@ Material:
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 5000
   stringTagMap: {}
   disabledShaderPasses:
   - SHADOWCASTER
@@ -92,6 +92,7 @@ Material:
     m_Floats:
     - Vector1_1a1e7e9697ee400c9b29e4fdf7b0dd35: 0.45
     - Vector1_2e38215f4bb14946a2068af329aa338e: 0.12
+    - Vector1_42e16916fc20479695c69a37c5448a05: 0
     - Vector1_b3151625347245a5b8dae31c6479b6ba: 0.57
     - _AlphaClip: 0
     - _Blend: 1
@@ -127,6 +128,7 @@ Material:
     - Color_6a96bb8c36b843d1b8db368ea275a19d: {r: 1, g: 0.0047169924, b: 0.0047169924, a: 1}
     - Color_af8247dc47d54799a19d254daabaf3e8: {r: 0.5647059, g: 0.5647059, b: 0.5647059, a: 0.65882355}
     - Color_d446ac28b44f4ae2b086c3c2e066abc1: {r: 0.68235296, g: 0.68235296, b: 0.68235296, a: 1}
+    - Color_def22a49d773461fb4baa7a449929324: {r: 0.02132353, g: 0.02132353, b: 0.02132353, a: 1}
     - _BaseColor: {r: 0.56037736, g: 0.89829624, b: 1, a: 0.11372549}
     - _Color: {r: 0.56037736, g: 0.89829624, b: 1, a: 0.11372549}
     - _EmissionColor: {r: 15.560784, g: 0, b: 0, a: 1}
