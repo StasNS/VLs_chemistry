@@ -232,8 +232,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Standed: {fileID: 1752904841470840271}
-  NamesObj:
-  - Electrod2
 --- !u!1 &40836300
 GameObject:
   m_ObjectHideFlags: 0
@@ -1018,8 +1016,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Standed: {fileID: 871170653718726910}
-  NamesObj:
-  - KolbaCylinder
 --- !u!65 &198750353
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1934,8 +1930,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Standed: {fileID: 4277963161321014668}
-  NamesObj:
-  - bath
 --- !u!65 &526192021
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7374,8 +7368,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Standed: {fileID: 4863437799180211091}
-  NamesObj:
-  - Electrod1
 --- !u!1 &762433400
 GameObject:
   m_ObjectHideFlags: 0
@@ -8418,7 +8410,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.9610897, g: 0.9622642, b: 0.8033998, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.6
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -9082,8 +9074,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Standed: {fileID: 8089480732764373007}
-  NamesObj:
-  - WetPaper
 --- !u!65 &1217206477
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15505,8 +15495,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Standed: {fileID: 8089480732764373007}
-  NamesObj:
-  - PaperMain
 --- !u!1 &1786396432
 GameObject:
   m_ObjectHideFlags: 0
@@ -16135,8 +16123,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Standed: {fileID: 1551981929}
-  NamesObj:
-  - KolbaCylinder1
 --- !u!65 &2070774574
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16468,7 +16454,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ca98e98b5b5fef40a2bac63d4a65f5d, type: 2}
+  - {fileID: 2100000, guid: 334c81b94a0fb8144aec210f9477e1c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -17422,7 +17408,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9ca98e98b5b5fef40a2bac63d4a65f5d, type: 2}
+  - {fileID: 2100000, guid: 334c81b94a0fb8144aec210f9477e1c9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

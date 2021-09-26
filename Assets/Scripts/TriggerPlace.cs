@@ -5,20 +5,15 @@ using UnityEngine;
 public class TriggerPlace : MonoBehaviour
 {
     public GameObject Standed;
-    public List<string> NamesObj;
     private void FixedUpdate()
     {
         var Used = GameObject.Find("Main Camera").GetComponent<NewDragNDrop>().Selected;
 
-
         if (Used != null && Used == Standed)//появление ключевой позиции при претаскивании предмета
         {
-            for (int i = 0; i < NamesObj.Count; i++)
+            if (Used.name == Standed.name)
             {
-                if (Used.name == NamesObj[i])
-                {
-                    transform.gameObject.GetComponent<MeshRenderer>().enabled = true;
-                }
+                transform.gameObject.GetComponent<MeshRenderer>().enabled = true;
             }
         }
         else transform.gameObject.GetComponent<MeshRenderer>().enabled = false;

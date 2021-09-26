@@ -38,6 +38,8 @@ MonoBehaviour:
   m_Values:
   - '{}'
   - '{}'
+  - '{"position":{"x":552.0,"y":187.0,"z":0.0},"scale":{"x":0.29020100831985476,"y":0.29020100831985476,"z":1.0}}'
+  - '{"m_Version":24,"m_SelectedElementsArray":[]}'
   - '{}'
   - '{}'
   - '{}'
@@ -56,5 +58,3 @@ MonoBehaviour:
   - '{}'
   - '{}'
   - '{}'
-  - '{"position":{"x":1326.0,"y":419.0,"z":0.0},"scale":{"x":0.5717532634735107,"y":0.5717532634735107,"z":1.0}}'
-  - '{"m_Version":72,"m_SelectedElementsArray":[]}'
