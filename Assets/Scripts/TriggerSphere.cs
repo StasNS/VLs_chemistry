@@ -7,11 +7,8 @@ public class TriggerSphere : MonoBehaviour
     public List<GameObject> Сontainer = new List<GameObject>(); //список объектов куда наливается
     public Vector3 BackPoint; //уровень возврата объекта в нужное положение 
     public GameObject ParticleWaterObj; // вода внутри колб и откуда наливается
-    public List<GameObject> PrefabWater; //меш воды которая якобы наливается
     public float speed; //скорость наклона колбы
     public float speedLiq; // скорость жидкости
-    public float target; // уровень подъема воды
-    public float ClosePoint; //расстояние до триггера
     private bool isCorrectContainer; //правильность наполняемого сосуда
     private GameObject _triggerredObj; //правильно задетый объект
 
@@ -72,9 +69,10 @@ public class TriggerSphere : MonoBehaviour
     private void WaterAnim(Transform _TriggeredObj)
     {
         var _liquid = _TriggeredObj.GetChild(0);
-        _liquid.gameObject.SetActive(true);
-        var LvlLiq = new Vector3(_liquid.localPosition.x, _liquid.localPosition.y, target);
-        _liquid.localPosition = Vector3.MoveTowards(_liquid.localPosition, LvlLiq, speedLiq * Time.deltaTime);
-       
+        var getfiller = _liquid.GetComponent<Renderer>().material.GetFloat("LiqFill");     
+        var setfiller = getfiller+speedLiq * Time.deltaTime;
+
+        _liquid.GetComponent<Renderer>().material.SetFloat("LiqFill",setfiller);
     }
+
 }
