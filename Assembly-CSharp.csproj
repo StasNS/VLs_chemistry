@@ -42,6 +42,7 @@
      <Compile Include="Assets\Scripts\TriggerPlace.cs" />
      <Compile Include="Assets\Scripts\Wobble.cs" />
      <Compile Include="Assets\Scripts\Test1.cs" />
+     <Compile Include="Assets\Scripts\Color_reaction.cs" />
      <Compile Include="Assets\Scripts\TriggerSphere.cs" />
      <Compile Include="Assets\Scripts\UIController.cs" />
      <Compile Include="Assets\Scripts\CableParticle.cs" />
@@ -49,7 +50,6 @@
      <Compile Include="Assets\Scripts\NewDragNDrop.cs" />
      <Compile Include="Assets\Scripts\CableComponent.cs" />
      <Compile Include="Assets\Scripts\Test.cs" />
-     <Compile Include="Assets\Scripts\Color_reaction.cs" />
      <None Include="Assets\Resources\MetodText.txt" />
      <None Include="Assets\Resources\ControlText.txt" />
     <Reference Include="UnityEngine">
