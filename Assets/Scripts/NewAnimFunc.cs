@@ -8,33 +8,28 @@ public class NewAnimFunc : MonoBehaviour
     [SerializeField] Action _Action;
     [SerializeField] List<Vector3> MoveTo = new List<Vector3>();
     [SerializeField] float Speed;
-    [SerializeField] float[] time;
-    private int current = 0;
-    private float timer = 0f;
-    private int next = 1;
-
+    [SerializeField] enum Conditions { None, ComparePosition }
+    [SerializeField] Conditions _Conditions;
+    private int next = 0;
+    private bool notdone = true;
     private void FixedUpdate()
     {
         if (_Action == Action.Move)
         {
-            Moving();
+            if (notdone)
+            {
+                Moving();
+            }
         }
     }
     private void Moving()
     {
-        foreach (var point in MoveTo)
+        transform.position = Vector3.MoveTowards(transform.position, MoveTo[next], Speed * Time.deltaTime);
+        if (transform.position == MoveTo[next])
         {
-            // transform.position = Vector3.MoveTowards(transform.position,point,Speed*Time.deltaTime);
-            transform.position = Vector3.Lerp(point[current], point[next], timer / time[current]);
-        }
-        timer += Time.deltaTime;
-        if (timer >= time[current])
-        {
-            timer = 0f;
-            current = next;
             next++;
-            if (next == points.Length) next = 0;
         }
+        if (next == MoveTo.Count) notdone = false;
     }
 
     #region CustomEditor
@@ -44,11 +39,13 @@ public class NewAnimFunc : MonoBehaviour
         SerializedProperty MoveTo;
         SerializedProperty Speed;
         SerializedProperty _Action;
+        SerializedProperty _Conditions;
         void OnEnable()
         {
             MoveTo = serializedObject.FindProperty("MoveTo");
             _Action = serializedObject.FindProperty("_Action");
             Speed = serializedObject.FindProperty("Speed");
+            _Conditions = serializedObject.FindProperty("_Conditions");
         }
         public override void OnInspectorGUI()
         {
@@ -56,16 +53,18 @@ public class NewAnimFunc : MonoBehaviour
 
             EditorGUILayout.PropertyField(_Action);
 
-            if (_Action.enumValueIndex == 0)
+            if (_Action.enumValueIndex == 1) //Добавление в Move поле
             {
-                //Скрыть все
-            }
-            if (_Action.enumValueIndex == 1)
-            {
-                EditorGUILayout.PropertyField(MoveTo); //Добавление списка точек перемещения
+                EditorGUILayout.PropertyField(MoveTo);
                 EditorGUILayout.PropertyField(Speed);
+                EditorGUILayout.PropertyField(_Conditions);
+            }
+            if (_Conditions.enumValueIndex == 1)
+            {
+
             }
             serializedObject.ApplyModifiedProperties();
         }
     }
+}
 #endregion

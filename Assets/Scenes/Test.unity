@@ -250,9 +250,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _Action: 1
   MoveTo:
-  - {x: 1, y: 0.5, z: 1}
-  - {x: 0.5, y: 0.5, z: 0.5}
-  Speed: 0.5
+  - {x: 2, y: 0.5, z: 2}
+  - {x: -2, y: 0.5, z: 2}
+  Speed: 1
+  _Conditions: 0
 --- !u!1 &213018219
 GameObject:
   m_ObjectHideFlags: 0
