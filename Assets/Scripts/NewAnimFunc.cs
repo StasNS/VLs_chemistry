@@ -8,19 +8,50 @@ public class NewAnimFunc : MonoBehaviour
     [SerializeField] Action _Action;
     [SerializeField] List<Vector3> MoveTo = new List<Vector3>();
     [SerializeField] float Speed;
-    [SerializeField] enum Conditions { None, ComparePosition }
+    [System.FlagsAttribute] enum Conditions { None, ComparePositionGO, ActivityIerarchy, }
     [SerializeField] Conditions _Conditions;
+    [SerializeField] List<GameObject> Left = new List<GameObject>();
+    [SerializeField] List<GameObject> Right = new List<GameObject>();
+    [SerializeField] List<GameObject> GOActive = new List<GameObject>();
     private int next = 0;
+    private int condIter = 0;
     private bool notdone = true;
     private void FixedUpdate()
     {
         if (_Action == Action.Move)
         {
-            if (notdone)
+            if (notdone && CheckCondition(Left, Right))
             {
                 Moving();
             }
         }
+    }
+
+    private bool CheckCondition(List<GameObject> _left, List<GameObject> _right)
+    {
+        bool result = false;
+        if (_Conditions == Conditions.None)
+        {
+            result = true;
+        }
+        if (_Conditions == Conditions.ComparePositionGO)
+        {
+            if (_left[condIter].transform.position == _right[condIter].transform.position)
+            {
+                result = true;
+            }
+            if (Left.Count > 1 && _left[condIter].transform.position == _right[condIter].transform.position)
+            {
+                condIter = 0;
+                condIter++;
+            }
+            if (condIter == Left.Count)
+            {
+                result = false;
+            }
+        }
+
+        return result;
     }
     private void Moving()
     {
@@ -40,12 +71,18 @@ public class NewAnimFunc : MonoBehaviour
         SerializedProperty Speed;
         SerializedProperty _Action;
         SerializedProperty _Conditions;
+        SerializedProperty Left;
+        SerializedProperty Right;
+        SerializedProperty GOActive;
         void OnEnable()
         {
             MoveTo = serializedObject.FindProperty("MoveTo");
             _Action = serializedObject.FindProperty("_Action");
             Speed = serializedObject.FindProperty("Speed");
             _Conditions = serializedObject.FindProperty("_Conditions");
+            Left = serializedObject.FindProperty("Left");
+            Right = serializedObject.FindProperty("Right");
+            GOActive = serializedObject.FindProperty("GOActive");
         }
         public override void OnInspectorGUI()
         {
@@ -61,7 +98,18 @@ public class NewAnimFunc : MonoBehaviour
             }
             if (_Conditions.enumValueIndex == 1)
             {
-
+                EditorGUILayout.PropertyField(Left);
+                EditorGUILayout.PropertyField(Right);
+            }
+            if (_Conditions.enumValueIndex == 2)
+            {
+                EditorGUILayout.PropertyField(GOActive);
+            }
+            if (_Conditions.enumValueIndex == -1)
+            {
+                EditorGUILayout.PropertyField(Left);
+                EditorGUILayout.PropertyField(Right);
+                EditorGUILayout.PropertyField(GOActive);
             }
             serializedObject.ApplyModifiedProperties();
         }
