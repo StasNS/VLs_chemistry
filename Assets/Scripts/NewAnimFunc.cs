@@ -30,21 +30,34 @@ public class NewAnimFunc : MonoBehaviour
     private bool CheckCondition(List<GameObject> _left, List<GameObject> _right)
     {
         bool result = false;
+
         if (_Conditions == Conditions.None)
         {
             result = true;
         }
         if (_Conditions == Conditions.ComparePositionGO)
         {
-            if (_left[condIter].transform.position == _right[condIter].transform.position)
-            {
-                result = true;
-            }
-            if (Left.Count > 1 && _left[condIter].transform.position == _right[condIter].transform.position)
-            {
-                condIter = 0;
-                condIter++;
-            }
+            // foreach (var condL in _left)
+            // {
+            //     foreach (var condR in _right)
+            //     {
+            //         if (condL.transform.position == condR.transform.position)
+            //         {
+            //             result = true;
+            //         }
+            //     }
+            // }
+            // if (_left[_left.Count-1].transform.position == _right[_right.Count-1].transform.position)
+            // {
+            //     result = true;
+            // }
+            // if (_left.Count > 1 || _right.Count > 1)
+            // {
+            //     if (_left[_left.Count-1].transform.position == _right[_right.Count-1].transform.position)
+            //     {
+            //         result = true;
+            //     }
+            // }
             if (condIter == Left.Count)
             {
                 result = false;
