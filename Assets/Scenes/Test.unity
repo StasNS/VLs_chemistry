@@ -546,14 +546,14 @@ MonoBehaviour:
   MoveTo:
   - {x: -2.5, y: 0.5, z: 1.5}
   Speed: 1
-  _Conditions: -1
+  _Conditions: 1
   Left:
-  - {fileID: 1005191215}
   - {fileID: 103354107}
+  - {fileID: 1005191215}
   - {fileID: 202813882}
   Right:
-  - {fileID: 750869459}
   - {fileID: 2113368421}
+  - {fileID: 750869459}
   - {fileID: 2120659938}
   GOActive: []
 --- !u!54 &399268425

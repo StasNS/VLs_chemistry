@@ -10,8 +10,8 @@ public class NewAnimFunc : MonoBehaviour
     [SerializeField] float Speed;
     [System.FlagsAttribute] enum Conditions { None, ComparePositionGO, ActivityIerarchy, }
     [SerializeField] Conditions _Conditions;
-    [SerializeField] List<GameObject> Left = new List<GameObject>();
-    [SerializeField] List<GameObject> Right = new List<GameObject>();
+    [SerializeField] List<GameObject> Left = new List<GameObject>(); //позиция объетка справа
+    [SerializeField] List<GameObject> Right = new List<GameObject>(); //позиция объетка слева
     [SerializeField] List<GameObject> GOActive = new List<GameObject>();
     private int next = 0;
     private int condIter = 0;
@@ -37,34 +37,36 @@ public class NewAnimFunc : MonoBehaviour
         }
         if (_Conditions == Conditions.ComparePositionGO)
         {
-            // foreach (var condL in _left)
-            // {
-            //     foreach (var condR in _right)
-            //     {
-            //         if (condL.transform.position == condR.transform.position)
-            //         {
-            //             result = true;
-            //         }
-            //     }
-            // }
-            // if (_left[_left.Count-1].transform.position == _right[_right.Count-1].transform.position)
-            // {
-            //     result = true;
-            // }
-            // if (_left.Count > 1 || _right.Count > 1)
-            // {
-            //     if (_left[_left.Count-1].transform.position == _right[_right.Count-1].transform.position)
-            //     {
-            //         result = true;
-            //     }
-            // }
-            if (condIter == Left.Count)
+            result = ComparePose(_left, _right);
+        }
+        if(_Conditions == Conditions.ActivityIerarchy)
+        {
+            //активность объекта в сцене
+        }
+        if(_Conditions == Conditions.ActivityIerarchy && _Conditions == Conditions.ComparePositionGO)
+        {
+            
+        }
+        return result;
+    }
+    private bool ComparePose(List<GameObject> _leftPos, List<GameObject> _rightPos)
+    {
+        var res = false;
+        for (int i = 0; i < _leftPos.Count; i++)
+        {
+            if (_leftPos[i].transform.position == _rightPos[i].transform.position)
             {
-                result = false;
+                res = true;
+                Debug.Log(i);
+            }
+            else
+            {
+                Debug.Log("Enter");
+                res = false;
+                break;
             }
         }
-
-        return result;
+        return res;
     }
     private void Moving()
     {
