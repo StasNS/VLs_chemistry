@@ -54,6 +54,7 @@ public class NewAnimFunc : MonoBehaviour
         {
             if (startreact)
             {
+                Debug.Log("Enter");
                 Reaction();
             }
             if (CheckCondition(Left, Right))
@@ -114,6 +115,10 @@ public class NewAnimFunc : MonoBehaviour
     private void Reaction()
     {
         myObj.material.color = Color.Lerp(myObj.material.color, ToChangeColor, ChangeTime * Time.deltaTime);
+        if (myObj.material.color.ToString() == ToChangeColor.ToString())
+        {
+            startreact = false;
+        }
     }
     #region CustomEditor
     [CustomEditor(typeof(NewAnimFunc))]
