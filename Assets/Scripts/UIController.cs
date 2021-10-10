@@ -70,6 +70,12 @@ public class UIController : MonoBehaviour
         ButtonActrivator();
         Next();
     }
+    public void Test()
+    {
+        GetText("Test");
+        ButtonActrivator();
+        Next();
+    }
     #endregion
     private void ButtonActrivator()
     {
