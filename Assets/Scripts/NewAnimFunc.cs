@@ -54,7 +54,6 @@ public class NewAnimFunc : MonoBehaviour
         {
             if (startreact)
             {
-                Debug.Log("Enter");
                 Reaction();
             }
             if (CheckCondition(Left, Right))

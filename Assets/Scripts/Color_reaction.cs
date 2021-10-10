@@ -16,12 +16,13 @@ public class Color_reaction : MonoBehaviour
     private void FixedUpdate()
     {
         if (GameObject.Find("Electrod1").transform.position == new Vector3(-1.772f, 1.8f, 0.233855f) &&
-        GameObject.Find("Electrod2").transform.position == new Vector3(-2.022f, 1.8f, 0.233855f))
+        GameObject.Find("Electrod2").transform.position == new Vector3(-2.022f, 1.8f, 0.233855f) &&
+        GameObject.Find("Akum").transform.position == new Vector3(-1.467300f, 1.535213f, -0.5064449f))
         {
             if (ischanged)
             {
                 myObj.material.color = Color.Lerp(myObj.material.color, ToChangeColor, ChangeTime * Time.deltaTime);
-                if(myObj.material.color.ToString() == ToChangeColor.ToString())
+                if (myObj.material.color.ToString() == ToChangeColor.ToString())
                 {
                     ischanged = false;
                 }
@@ -29,8 +30,14 @@ public class Color_reaction : MonoBehaviour
             if (myObj.material.color.ToString() == colorChanged.ToString())
             {
                 ischanged = true;
-                GameObject.Find("Bubbles_particle").GetComponent<ParticleSystem>().Play();
+                GameObject.Find("Bubbles_particle_R").GetComponent<ParticleSystem>().Play();
+                GameObject.Find("Bubbles_particle_L").GetComponent<ParticleSystem>().Play();
             }
+        }
+        else
+        {
+            GameObject.Find("Bubbles_particle_R").GetComponent<ParticleSystem>().Stop();
+            GameObject.Find("Bubbles_particle_L").GetComponent<ParticleSystem>().Stop();
         }
     }
 }
