@@ -12358,6 +12358,8 @@ MonoBehaviour:
   Right:
   - {fileID: 1242289701}
   GOActive: []
+  AnimObjects: []
+  ComparePos: []
 --- !u!114 &48087819124674096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12754,6 +12756,8 @@ MonoBehaviour:
   Right:
   - {fileID: 1572739101}
   GOActive: []
+  AnimObjects: []
+  ComparePos: []
 --- !u!4 &905844847459800375
 Transform:
   m_ObjectHideFlags: 0
@@ -13644,6 +13648,8 @@ MonoBehaviour:
   Right:
   - {fileID: 1284056508}
   GOActive: []
+  AnimObjects: []
+  ComparePos: []
 --- !u!54 &2895627181743341894
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14319,6 +14325,8 @@ MonoBehaviour:
   Right:
   - {fileID: 342148741}
   GOActive: []
+  AnimObjects: []
+  ComparePos: []
 --- !u!136 &4848024366013233766
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19098,6 +19106,8 @@ MonoBehaviour:
   Right:
   - {fileID: 342148741}
   GOActive: []
+  AnimObjects: []
+  ComparePos: []
 --- !u!114 &7031872713938414170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19797,6 +19807,8 @@ MonoBehaviour:
   Right:
   - {fileID: 795788060}
   GOActive: []
+  AnimObjects: []
+  ComparePos: []
 --- !u!54 &8713815021019240322
 Rigidbody:
   m_ObjectHideFlags: 0

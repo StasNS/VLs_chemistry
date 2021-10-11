@@ -28,6 +28,9 @@ public class NewAnimFunc : MonoBehaviour
     private bool notdone = true;
     private bool startMove = false;
     #endregion
+    #region  rotate
+
+    #endregion
     private void Start()
     {
         myObj = transform.GetComponent<Renderer>();
