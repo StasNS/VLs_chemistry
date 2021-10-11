@@ -17,16 +17,17 @@ public class NewAnimFunc : MonoBehaviour
     #region moveParams
     [SerializeField] List<Vector3> MoveTo = new List<Vector3>();
     [SerializeField] float Speed;
-    [System.FlagsAttribute] enum Conditions { None, ComparePositionGO, ActivityIerarchy, }
+    [System.FlagsAttribute] enum Conditions { None, ComparePositionGO, ActivityIerarchy, CompGOandActIe, CompareVector }
     [SerializeField] Conditions _Conditions;
     [SerializeField] List<GameObject> Left = new List<GameObject>(); //позиция объетка справа
     [SerializeField] List<GameObject> Right = new List<GameObject>(); //позиция объетка слева
     [SerializeField] List<GameObject> GOActive = new List<GameObject>();
+    [SerializeField] List<GameObject> AnimObjects = new List<GameObject>();
+    [SerializeField] List<Vector3> ComparePos = new List<Vector3>();
     private int next = 0;
     private bool notdone = true;
     private bool startMove = false;
     #endregion
-
     private void Start()
     {
         myObj = transform.GetComponent<Renderer>();
@@ -76,7 +77,11 @@ public class NewAnimFunc : MonoBehaviour
         }
         if (_Conditions == Conditions.ActivityIerarchy)
         {
-            //активность объекта в сцене
+           result = isActive(AnimObjects);
+        }
+        if (_Conditions == Conditions.CompareVector)
+        {
+            result = VectorToObj(AnimObjects, ComparePos);
         }
         if (_Conditions == Conditions.ActivityIerarchy && _Conditions == Conditions.ComparePositionGO)
         {
@@ -101,6 +106,23 @@ public class NewAnimFunc : MonoBehaviour
         }
         return res;
     }
+    private bool VectorToObj(List<GameObject> gameObjects, List<Vector3> vectors)
+    {
+        var res = false;
+        for (int i = 0; i < gameObjects.Count; i++)
+        {
+            if (gameObjects[i].transform.position == vectors[i])
+            {
+                res = true;
+            }
+            else
+            {
+                res = false;
+                break;
+            }
+        }
+        return res;
+    }
     private void Moving()
     {
         transform.position = Vector3.MoveTowards(transform.position, MoveTo[next], Speed * Time.deltaTime);
@@ -111,6 +133,25 @@ public class NewAnimFunc : MonoBehaviour
         }
         if (next == MoveTo.Count) notdone = false;
     }
+    
+    private bool isActive(List<GameObject> animobj)
+    {
+        var res = false;
+        for (int i = 0; i < animobj.Count; i++)
+        {
+            if (animobj[i].activeInHierarchy)
+            {
+                res = true;
+            }
+            else
+            {
+                res = false;
+                break;
+            }
+        }
+        return res;
+    }
+
     private void Reaction()
     {
         myObj.material.color = Color.Lerp(myObj.material.color, ToChangeColor, ChangeTime * Time.deltaTime);
@@ -124,47 +165,54 @@ public class NewAnimFunc : MonoBehaviour
     public class CustomScript : Editor
     {
         #region MoveParams
-
         SerializedProperty MoveTo;
         SerializedProperty Speed;
         SerializedProperty _Action;
         SerializedProperty _Conditions;
         SerializedProperty Left;
         SerializedProperty Right;
-        SerializedProperty GOActive;
+        SerializedProperty AnimObjects;
+        SerializedProperty ComparePos;
         #endregion
         SerializedProperty ToChangeColor;
         SerializedProperty ChangeTime;
         void OnEnable()
         {
+            #region MoveParEnable
             MoveTo = serializedObject.FindProperty("MoveTo");
             _Action = serializedObject.FindProperty("_Action");
             Speed = serializedObject.FindProperty("Speed");
             _Conditions = serializedObject.FindProperty("_Conditions");
             Left = serializedObject.FindProperty("Left");
             Right = serializedObject.FindProperty("Right");
-            GOActive = serializedObject.FindProperty("GOActive");
+            AnimObjects = serializedObject.FindProperty("AnimObjects");
+            ComparePos = serializedObject.FindProperty("ComparePos");
+            #endregion
+
             ToChangeColor = serializedObject.FindProperty("ToChangeColor");
             ChangeTime = serializedObject.FindProperty("ChangeTime");
+
         }
         public override void OnInspectorGUI()
         {
             serializedObject.Update();
 
+            #region _ActionEnum
             EditorGUILayout.PropertyField(_Action);
-
             if (_Action.enumValueIndex == 1) //Добавление в Move поле
             {
                 EditorGUILayout.PropertyField(MoveTo);
                 EditorGUILayout.PropertyField(Speed);
                 EditorGUILayout.PropertyField(_Conditions);
             }
-            if (_Action.enumValueIndex == 3) //Добавление в Move поле
+            if (_Action.enumValueIndex == 3)
             {
                 EditorGUILayout.PropertyField(ToChangeColor);
                 EditorGUILayout.PropertyField(ChangeTime);
                 EditorGUILayout.PropertyField(_Conditions);
             }
+            #endregion
+            #region _ConditionEnum
             if (_Conditions.enumValueIndex == 1)
             {
                 EditorGUILayout.PropertyField(Left);
@@ -172,14 +220,20 @@ public class NewAnimFunc : MonoBehaviour
             }
             if (_Conditions.enumValueIndex == 2)
             {
-                EditorGUILayout.PropertyField(GOActive);
+                EditorGUILayout.PropertyField(AnimObjects);
             }
-            if (_Conditions.enumValueIndex == -1)
+            if (_Conditions.enumValueIndex == 4)
             {
-                EditorGUILayout.PropertyField(Left);
-                EditorGUILayout.PropertyField(Right);
-                EditorGUILayout.PropertyField(GOActive);
+                EditorGUILayout.PropertyField(AnimObjects);
+                EditorGUILayout.PropertyField(ComparePos);
             }
+            #endregion
+            // if (_Conditions.enumValueIndex == -1)
+            // {
+            //     EditorGUILayout.PropertyField(Left);
+            //     EditorGUILayout.PropertyField(Right);
+            //     EditorGUILayout.PropertyField(GOActive);
+            // }
             serializedObject.ApplyModifiedProperties();
         }
     }
