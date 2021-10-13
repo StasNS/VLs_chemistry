@@ -254,7 +254,7 @@ MonoBehaviour:
   MoveTo:
   - {x: 2, y: 0.5, z: 2}
   Speed: 2
-  _Conditions: 2
+  _Conditions: 9
   Left:
   - {fileID: 103354107}
   Right:

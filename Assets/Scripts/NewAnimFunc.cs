@@ -1,10 +1,15 @@
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEditor;
-
 public class NewAnimFunc : MonoBehaviour
 {
     [SerializeField] enum Action { None, Move, Rotate, ChangeColor }
+    [System.FlagsAttribute]
+    enum Conditions
+    {
+        None, ComparePositionGO, ActivityIerarchy, CompGOandActIe, CompareVector, FirstAndFourth,
+        SecondAndFourth, FirstAndSecondFourth, WaterFill, FirstAndEight
+    }
     [SerializeField] Action _Action;
 
     #region changeColorParams
@@ -13,26 +18,24 @@ public class NewAnimFunc : MonoBehaviour
     private Renderer myObj;
     private bool startreact = false;
     #endregion
-
     #region moveParams
     [SerializeField] List<Vector3> MoveTo = new List<Vector3>();
     [SerializeField] float Speed;
-    [System.FlagsAttribute] enum Conditions { None, ComparePositionGO, ActivityIerarchy, CompGOandActIe, CompareVector }
     [SerializeField] Conditions _Conditions;
     [SerializeField] List<GameObject> Left = new List<GameObject>(); //позиция объетка справа
     [SerializeField] List<GameObject> Right = new List<GameObject>(); //позиция объетка слева
     [SerializeField] List<GameObject> GOActive = new List<GameObject>();
     [SerializeField] List<GameObject> AnimObjects = new List<GameObject>();
+    [SerializeField] float LiqLevel;
     [SerializeField] List<Vector3> ComparePos = new List<Vector3>();
     private int next = 0;
     private bool notdone = true;
     private bool startMove = false;
+    private Quaternion originRotation;
     #endregion
     #region  rotate
     [SerializeField] List<Vector3> RotationAngle = new List<Vector3>();
     [SerializeField] List<GameObject> ObjToRotate = new List<GameObject>();
-    private Quaternion originRotation;
-    private float angle;
     private int nextr = 0;
     private bool notdoner = true;
     private bool startRot = false;
@@ -40,7 +43,9 @@ public class NewAnimFunc : MonoBehaviour
     private void Start()
     {
         myObj = transform.GetComponent<Renderer>();
+
         originRotation = transform.rotation;
+
     }
     private void FixedUpdate()
     {
@@ -56,6 +61,7 @@ public class NewAnimFunc : MonoBehaviour
             }
             else if (notdone == false)
             {
+                transform.rotation = originRotation;
                 startMove = false;
                 notdone = true;
                 next = 0;
@@ -89,16 +95,7 @@ public class NewAnimFunc : MonoBehaviour
             }
         }
     }
-    private void Rotation(List<Vector3> Angle)
-    {
-        var _angle = Quaternion.Euler(Angle[nextr]);
-        transform.rotation = Quaternion.Lerp(transform.rotation,_angle,Speed * Time.deltaTime);
-        if (transform.rotation.eulerAngles.ToString() == Angle[nextr].ToString())
-        {
-            nextr++;
-        }
-        if (nextr == Angle.Count) notdoner = false;
-    }
+
     private bool CheckCondition(List<GameObject> _left, List<GameObject> _right)
     {
         bool result = false;
@@ -113,7 +110,7 @@ public class NewAnimFunc : MonoBehaviour
         }
         if (_Conditions == Conditions.ActivityIerarchy)
         {
-           result = isActive(AnimObjects);
+            result = isActive(AnimObjects);
         }
         if (_Conditions == Conditions.CompareVector)
         {
@@ -123,7 +120,24 @@ public class NewAnimFunc : MonoBehaviour
         {
 
         }
+        if (_Conditions == Conditions.FirstAndEight)
+        {
+            if(fillAndPos() && ComparePose(_left, _right))
+            {
+                result = true;
+            }
+        }
         return result;
+    }
+    private void Rotation(List<Vector3> Angle)
+    {
+        var _angle = Quaternion.Euler(Angle[nextr]);
+        transform.rotation = Quaternion.Lerp(transform.rotation, _angle, Speed * Time.deltaTime);
+        if (transform.rotation.eulerAngles.ToString() == Angle[nextr].ToString())
+        {
+            nextr++;
+        }
+        if (nextr == Angle.Count) notdoner = false;
     }
     private bool ComparePose(List<GameObject> _leftPos, List<GameObject> _rightPos)
     {
@@ -186,7 +200,17 @@ public class NewAnimFunc : MonoBehaviour
         }
         return res;
     }
-
+    private bool fillAndPos()
+    {
+        var res = false;
+        var _liquid = transform.GetChild(0);
+        var getfiller = _liquid.GetComponent<Renderer>().material.GetFloat("LiqFill"); 
+        if (getfiller >= LiqLevel)
+        {
+            res = true;
+        }
+        return res;
+    }
     private void Reaction()
     {
         myObj.material.color = Color.Lerp(myObj.material.color, ToChangeColor, ChangeTime * Time.deltaTime);
@@ -208,6 +232,7 @@ public class NewAnimFunc : MonoBehaviour
         SerializedProperty Right;
         SerializedProperty AnimObjects;
         SerializedProperty ComparePos;
+        SerializedProperty LiqLevel;
         #endregion
         SerializedProperty ToChangeColor;
         SerializedProperty ChangeTime;
@@ -224,13 +249,14 @@ public class NewAnimFunc : MonoBehaviour
             Right = serializedObject.FindProperty("Right");
             AnimObjects = serializedObject.FindProperty("AnimObjects");
             ComparePos = serializedObject.FindProperty("ComparePos");
+            LiqLevel = serializedObject.FindProperty("LiqLevel");
             #endregion
 
             ToChangeColor = serializedObject.FindProperty("ToChangeColor");
             ChangeTime = serializedObject.FindProperty("ChangeTime");
             RotationAngle = serializedObject.FindProperty("RotationAngle");
             ObjToRotate = serializedObject.FindProperty("ObjToRotate");
-
+            
         }
         public override void OnInspectorGUI()
         {
@@ -257,6 +283,7 @@ public class NewAnimFunc : MonoBehaviour
                 EditorGUILayout.PropertyField(ChangeTime);
                 EditorGUILayout.PropertyField(_Conditions);
             }
+             
             #endregion
             #region _ConditionEnum
             if (_Conditions.enumValueIndex == 1)
@@ -272,6 +299,12 @@ public class NewAnimFunc : MonoBehaviour
             {
                 EditorGUILayout.PropertyField(AnimObjects);
                 EditorGUILayout.PropertyField(ComparePos);
+            }
+            if (_Conditions.enumValueIndex == 9)
+            {
+                EditorGUILayout.PropertyField(Left);
+                EditorGUILayout.PropertyField(Right);
+                EditorGUILayout.PropertyField(LiqLevel);
             }
             #endregion
             serializedObject.ApplyModifiedProperties();
