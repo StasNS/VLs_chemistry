@@ -16,6 +16,7 @@ public class NewAnimFunc : MonoBehaviour
 
     #region moveParams
     [SerializeField] List<Vector3> MoveTo = new List<Vector3>();
+    
     [SerializeField] float Speed;
     [System.FlagsAttribute] enum Conditions { None, ComparePositionGO, ActivityIerarchy, CompGOandActIe, CompareVector }
     [SerializeField] Conditions _Conditions;
@@ -29,11 +30,17 @@ public class NewAnimFunc : MonoBehaviour
     private bool startMove = false;
     #endregion
     #region  rotate
-
+    [SerializeField] List<Vector3> RotationAngle = new List<Vector3>();
+    private Quaternion originRotation;
+    private float angle;
+    private int nextr = 0;
+    private bool notdoner = true;
+    private bool startRot = false;
     #endregion
     private void Start()
     {
         myObj = transform.GetComponent<Renderer>();
+        originRotation = transform.rotation;
     }
     private void FixedUpdate()
     {
@@ -65,6 +72,34 @@ public class NewAnimFunc : MonoBehaviour
                 startreact = true;
             }
         }
+        if (_Action == Action.Rotate)
+        {
+            if (startRot)
+            {
+                Rotation(RotationAngle);
+            }
+            if (notdoner && CheckCondition(Left, Right))
+            {
+                startRot = true;
+            }
+            else if (notdoner == false)
+            {
+                Debug.Log(notdoner);
+                startRot = false;
+                notdoner = true;
+                nextr = 0;
+            }
+        }
+    }
+    private void Rotation(List<Vector3> Angle)
+    {
+        var _angle = Quaternion.Euler(Angle[nextr]);
+        transform.rotation = Quaternion.Lerp(transform.rotation,_angle,Speed * Time.deltaTime);
+        if (transform.rotation.eulerAngles.ToString() == Angle[nextr].ToString())
+        {
+            nextr++;
+        }
+        if (nextr == Angle.Count) notdoner = false;
     }
     private bool CheckCondition(List<GameObject> _left, List<GameObject> _right)
     {
@@ -136,7 +171,6 @@ public class NewAnimFunc : MonoBehaviour
         }
         if (next == MoveTo.Count) notdone = false;
     }
-    
     private bool isActive(List<GameObject> animobj)
     {
         var res = false;
@@ -179,6 +213,7 @@ public class NewAnimFunc : MonoBehaviour
         #endregion
         SerializedProperty ToChangeColor;
         SerializedProperty ChangeTime;
+        SerializedProperty RotationAngle;
         void OnEnable()
         {
             #region MoveParEnable
@@ -194,6 +229,7 @@ public class NewAnimFunc : MonoBehaviour
 
             ToChangeColor = serializedObject.FindProperty("ToChangeColor");
             ChangeTime = serializedObject.FindProperty("ChangeTime");
+            RotationAngle = serializedObject.FindProperty("RotationAngle");
 
         }
         public override void OnInspectorGUI()
@@ -205,6 +241,13 @@ public class NewAnimFunc : MonoBehaviour
             if (_Action.enumValueIndex == 1) //Добавление в Move поле
             {
                 EditorGUILayout.PropertyField(MoveTo);
+                EditorGUILayout.PropertyField(Speed);
+                EditorGUILayout.PropertyField(_Conditions);
+            }
+            if (_Action.enumValueIndex == 2)
+            {
+                EditorGUILayout.PropertyField(RotationAngle);
+                EditorGUILayout.PropertyField(AnimObjects);
                 EditorGUILayout.PropertyField(Speed);
                 EditorGUILayout.PropertyField(_Conditions);
             }
@@ -231,12 +274,6 @@ public class NewAnimFunc : MonoBehaviour
                 EditorGUILayout.PropertyField(ComparePos);
             }
             #endregion
-            // if (_Conditions.enumValueIndex == -1)
-            // {
-            //     EditorGUILayout.PropertyField(Left);
-            //     EditorGUILayout.PropertyField(Right);
-            //     EditorGUILayout.PropertyField(GOActive);
-            // }
             serializedObject.ApplyModifiedProperties();
         }
     }

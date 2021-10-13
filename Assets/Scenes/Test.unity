@@ -156,7 +156,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -230,7 +230,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 103354107}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.5, z: -2.5}
+  m_LocalPosition: {x: -1.956, y: 2.345, z: 0.649}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -248,22 +248,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3672854d66a3343a13f2bb7906b021, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Action: 1
+  _Action: 2
   ToChangeColor: {r: 0, g: 0, b: 0, a: 0}
   ChangeTime: 0
   MoveTo:
   - {x: 2, y: 0.5, z: 2}
-  Speed: 1
-  _Conditions: 2
+  Speed: 2
+  _Conditions: 0
   Left:
   - {fileID: 103354107}
   Right:
   - {fileID: 2113368421}
   GOActive: []
   AnimObjects:
-  - {fileID: 402141278}
+  - {fileID: 103354107}
   ComparePos:
   - {x: 0.5, y: 0.5, z: 1.5}
+  RotationAngle:
+  - {x: 45, y: 0, z: 0}
+  - {x: 0, y: 60, z: 0}
 --- !u!1 &213018219
 GameObject:
   m_ObjectHideFlags: 0
@@ -447,6 +450,7 @@ MonoBehaviour:
   - {fileID: 402141278}
   ComparePos:
   - {x: 0.5, y: 0.5, z: 1.5}
+  RotationAngle: []
 --- !u!54 &402141280
 Rigidbody:
   m_ObjectHideFlags: 0
