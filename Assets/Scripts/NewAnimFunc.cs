@@ -16,7 +16,6 @@ public class NewAnimFunc : MonoBehaviour
 
     #region moveParams
     [SerializeField] List<Vector3> MoveTo = new List<Vector3>();
-    
     [SerializeField] float Speed;
     [System.FlagsAttribute] enum Conditions { None, ComparePositionGO, ActivityIerarchy, CompGOandActIe, CompareVector }
     [SerializeField] Conditions _Conditions;
@@ -31,6 +30,7 @@ public class NewAnimFunc : MonoBehaviour
     #endregion
     #region  rotate
     [SerializeField] List<Vector3> RotationAngle = new List<Vector3>();
+    [SerializeField] List<GameObject> ObjToRotate = new List<GameObject>();
     private Quaternion originRotation;
     private float angle;
     private int nextr = 0;
@@ -84,9 +84,7 @@ public class NewAnimFunc : MonoBehaviour
             }
             else if (notdoner == false)
             {
-                Debug.Log(notdoner);
                 startRot = false;
-                notdoner = true;
                 nextr = 0;
             }
         }
@@ -214,6 +212,7 @@ public class NewAnimFunc : MonoBehaviour
         SerializedProperty ToChangeColor;
         SerializedProperty ChangeTime;
         SerializedProperty RotationAngle;
+        SerializedProperty ObjToRotate;
         void OnEnable()
         {
             #region MoveParEnable
@@ -230,6 +229,7 @@ public class NewAnimFunc : MonoBehaviour
             ToChangeColor = serializedObject.FindProperty("ToChangeColor");
             ChangeTime = serializedObject.FindProperty("ChangeTime");
             RotationAngle = serializedObject.FindProperty("RotationAngle");
+            ObjToRotate = serializedObject.FindProperty("ObjToRotate");
 
         }
         public override void OnInspectorGUI()
@@ -247,7 +247,7 @@ public class NewAnimFunc : MonoBehaviour
             if (_Action.enumValueIndex == 2)
             {
                 EditorGUILayout.PropertyField(RotationAngle);
-                EditorGUILayout.PropertyField(AnimObjects);
+                EditorGUILayout.PropertyField(ObjToRotate);
                 EditorGUILayout.PropertyField(Speed);
                 EditorGUILayout.PropertyField(_Conditions);
             }

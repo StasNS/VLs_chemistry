@@ -254,19 +254,21 @@ MonoBehaviour:
   MoveTo:
   - {x: 2, y: 0.5, z: 2}
   Speed: 2
-  _Conditions: 0
+  _Conditions: 2
   Left:
   - {fileID: 103354107}
   Right:
   - {fileID: 2113368421}
   GOActive: []
   AnimObjects:
-  - {fileID: 103354107}
+  - {fileID: 402141278}
   ComparePos:
   - {x: 0.5, y: 0.5, z: 1.5}
   RotationAngle:
   - {x: 45, y: 0, z: 0}
-  - {x: 0, y: 60, z: 0}
+  - {x: 45, y: 60, z: 0}
+  ObjToRotate:
+  - {fileID: 103354107}
 --- !u!1 &213018219
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,6 +453,7 @@ MonoBehaviour:
   ComparePos:
   - {x: 0.5, y: 0.5, z: 1.5}
   RotationAngle: []
+  ObjToRotate: []
 --- !u!54 &402141280
 Rigidbody:
   m_ObjectHideFlags: 0
