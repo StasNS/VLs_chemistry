@@ -5,11 +5,12 @@ using UnityEngine;
 public class TriggerPlace : MonoBehaviour
 {
     public GameObject Standed;
+    public string RenamedObj;
     private void FixedUpdate()
     {
         var Used = GameObject.Find("Main Camera").GetComponent<NewDragNDrop>().Selected;
 
-        if (Used != null && Used == Standed)//появление ключевой позиции при претаскивании предмета
+        if (Used != null && Used == Standed && Used.name == RenamedObj)//появление ключевой позиции при претаскивании предмета
         {
             if (Used.name == Standed.name)
             {

@@ -27,6 +27,7 @@ public class NewAnimFunc : MonoBehaviour
     [SerializeField] List<GameObject> GOActive = new List<GameObject>();
     [SerializeField] List<GameObject> AnimObjects = new List<GameObject>();
     [SerializeField] float LiqLevel;
+    [SerializeField] List<GameObject> ContainerLiquid = new List<GameObject>();
     [SerializeField] List<Vector3> ComparePos = new List<Vector3>();
     private int next = 0;
     private bool notdone = true;
@@ -54,6 +55,21 @@ public class NewAnimFunc : MonoBehaviour
             if (startMove)
             {
                 Moving();
+                #region SpecialPaper
+                if (transform.gameObject == GameObject.Find("PaperMain"))
+                {
+                    var children1 = transform.GetComponentsInChildren<Transform>();
+                    if (transform.position == new Vector3(-0.7400001f, 1.365f, 0.2848f))
+                    {
+                        transform.gameObject.name = "WetPaper";
+                        foreach (Transform child in children1)
+                        {
+                            child.gameObject.GetComponent<Renderer>().material.color = new Color(0.4f,0.4f,0.4f);
+                        }
+                        transform.GetComponent<Renderer>().material.color = new Color(0.4f,0.4f,0.4f);
+                    }
+                }
+                #endregion
             }
             if (notdone && CheckCondition(Left, Right))
             {
@@ -61,7 +77,6 @@ public class NewAnimFunc : MonoBehaviour
             }
             else if (notdone == false)
             {
-                transform.rotation = originRotation;
                 startMove = false;
                 notdone = true;
                 next = 0;
@@ -116,15 +131,19 @@ public class NewAnimFunc : MonoBehaviour
         {
             result = VectorToObj(AnimObjects, ComparePos);
         }
-        if (_Conditions == Conditions.ActivityIerarchy && _Conditions == Conditions.ComparePositionGO)
+        if (_Conditions == Conditions.CompGOandActIe)
         {
-
+            if (isActive(GOActive) && ComparePose(_left, _right))
+            {
+                result = true;
+            }
         }
         if (_Conditions == Conditions.FirstAndEight)
         {
-            if(fillAndPos() && ComparePose(_left, _right))
+            if (LiquidLevel(ContainerLiquid) && ComparePose(_left, _right))
             {
                 result = true;
+
             }
         }
         return result;
@@ -200,14 +219,19 @@ public class NewAnimFunc : MonoBehaviour
         }
         return res;
     }
-    private bool fillAndPos()
+    private bool LiquidLevel(List<GameObject> _containerLiquid)
     {
         var res = false;
-        var _liquid = transform.GetChild(0);
-        var getfiller = _liquid.GetComponent<Renderer>().material.GetFloat("LiqFill"); 
-        if (getfiller >= LiqLevel)
+        Transform _liquid;
+        float getfiller;
+        foreach (GameObject liq in _containerLiquid)
         {
-            res = true;
+            _liquid = liq.transform.GetChild(0);
+            getfiller = _liquid.GetComponent<Renderer>().material.GetFloat("LiqFill");
+            if (getfiller >= LiqLevel)
+            {
+                res = true;
+            }
         }
         return res;
     }
@@ -233,11 +257,14 @@ public class NewAnimFunc : MonoBehaviour
         SerializedProperty AnimObjects;
         SerializedProperty ComparePos;
         SerializedProperty LiqLevel;
+        SerializedProperty GOActive;
+
         #endregion
         SerializedProperty ToChangeColor;
         SerializedProperty ChangeTime;
         SerializedProperty RotationAngle;
         SerializedProperty ObjToRotate;
+        SerializedProperty ContainerLiquid;
         void OnEnable()
         {
             #region MoveParEnable
@@ -250,13 +277,14 @@ public class NewAnimFunc : MonoBehaviour
             AnimObjects = serializedObject.FindProperty("AnimObjects");
             ComparePos = serializedObject.FindProperty("ComparePos");
             LiqLevel = serializedObject.FindProperty("LiqLevel");
+            GOActive = serializedObject.FindProperty("GOActive");
             #endregion
 
             ToChangeColor = serializedObject.FindProperty("ToChangeColor");
             ChangeTime = serializedObject.FindProperty("ChangeTime");
             RotationAngle = serializedObject.FindProperty("RotationAngle");
             ObjToRotate = serializedObject.FindProperty("ObjToRotate");
-            
+            ContainerLiquid = serializedObject.FindProperty("ContainerLiquid");
         }
         public override void OnInspectorGUI()
         {
@@ -283,7 +311,7 @@ public class NewAnimFunc : MonoBehaviour
                 EditorGUILayout.PropertyField(ChangeTime);
                 EditorGUILayout.PropertyField(_Conditions);
             }
-             
+
             #endregion
             #region _ConditionEnum
             if (_Conditions.enumValueIndex == 1)
@@ -295,6 +323,12 @@ public class NewAnimFunc : MonoBehaviour
             {
                 EditorGUILayout.PropertyField(AnimObjects);
             }
+            if (_Conditions.enumValueIndex == 3)
+            {
+                EditorGUILayout.PropertyField(GOActive);
+                EditorGUILayout.PropertyField(Left);
+                EditorGUILayout.PropertyField(Right);
+            }
             if (_Conditions.enumValueIndex == 4)
             {
                 EditorGUILayout.PropertyField(AnimObjects);
@@ -304,6 +338,7 @@ public class NewAnimFunc : MonoBehaviour
             {
                 EditorGUILayout.PropertyField(Left);
                 EditorGUILayout.PropertyField(Right);
+                EditorGUILayout.PropertyField(ContainerLiquid);
                 EditorGUILayout.PropertyField(LiqLevel);
             }
             #endregion

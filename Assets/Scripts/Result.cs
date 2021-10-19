@@ -5,11 +5,11 @@ using UnityEngine;
 public class Result : MonoBehaviour
 {
     [SerializeField] GameObject activator;
-    [SerializeField] Vector3 tarhet;
+    [SerializeField] Vector3 target;
     [SerializeField] GameObject result;
     private void FixedUpdate()
     {
-        if(activator.transform.position == tarhet)
+        if(activator.transform.rotation.eulerAngles.ToString() == target.ToString())
         {
             result.SetActive(true);
         }

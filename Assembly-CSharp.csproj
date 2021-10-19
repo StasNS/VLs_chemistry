@@ -39,7 +39,7 @@
      <Compile Include="Assets\Scripts\Result.cs" />
      <Compile Include="Assets\Scripts\DropWater.cs" />
      <Compile Include="Assets\Scripts\OldTriggerSpheree.cs" />
-     <Compile Include="Assets\Scripts\AnimController.cs" />
+     <Compile Include="Assets\Scripts\ArrowMover.cs" />
      <Compile Include="Assets\Scripts\TriggerPlace.cs" />
      <Compile Include="Assets\Scripts\NewAnimFunc.cs" />
      <Compile Include="Assets\Scripts\Wobble.cs" />
@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\NewDragNDrop.cs" />
      <Compile Include="Assets\Scripts\CableComponent.cs" />
      <Compile Include="Assets\Scripts\Test.cs" />
+     <Compile Include="Assets\Scripts\SpecialPaperMove.cs" />
      <None Include="Assets\Resources\MetodText.txt" />
      <None Include="Assets\Resources\ControlText.txt" />
     <Reference Include="UnityEngine">

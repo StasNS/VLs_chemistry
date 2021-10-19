@@ -473,6 +473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Standed: {fileID: 4848024366013233764}
+  RenamedObj: 
 --- !u!65 &342148744
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1041,6 +1042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Standed: {fileID: 8713815021019240319}
+  RenamedObj: 
 --- !u!65 &795788065
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1231,6 +1233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Standed: {fileID: 2895627181743341892}
+  RenamedObj: 
 --- !u!65 &1284056513
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6356,6 +6359,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Standed: {fileID: 800116016379591881}
+  RenamedObj: 
 --- !u!65 &1572739106
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12359,7 +12363,11 @@ MonoBehaviour:
   - {fileID: 1242289701}
   GOActive: []
   AnimObjects: []
+  LiqLevel: 0
+  ContainerLiquid: []
   ComparePos: []
+  RotationAngle: []
+  ObjToRotate: []
 --- !u!114 &48087819124674096
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12757,7 +12765,11 @@ MonoBehaviour:
   - {fileID: 1572739101}
   GOActive: []
   AnimObjects: []
+  LiqLevel: 0
+  ContainerLiquid: []
   ComparePos: []
+  RotationAngle: []
+  ObjToRotate: []
 --- !u!4 &905844847459800375
 Transform:
   m_ObjectHideFlags: 0
@@ -13058,7 +13070,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3985151ace98beb43bc0a62508c43518, type: 2}
+  - {fileID: 2100000, guid: 0aa5fd110ac27e5429b8a8adc6549d39, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -13649,7 +13661,11 @@ MonoBehaviour:
   - {fileID: 1284056508}
   GOActive: []
   AnimObjects: []
+  LiqLevel: 0
+  ContainerLiquid: []
   ComparePos: []
+  RotationAngle: []
+  ObjToRotate: []
 --- !u!54 &2895627181743341894
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14257,7 +14273,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3985151ace98beb43bc0a62508c43518, type: 2}
+  - {fileID: 2100000, guid: 0aa5fd110ac27e5429b8a8adc6549d39, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -14326,7 +14342,11 @@ MonoBehaviour:
   - {fileID: 342148741}
   GOActive: []
   AnimObjects: []
+  LiqLevel: 0
+  ContainerLiquid: []
   ComparePos: []
+  RotationAngle: []
+  ObjToRotate: []
 --- !u!136 &4848024366013233766
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -19107,7 +19127,11 @@ MonoBehaviour:
   - {fileID: 342148741}
   GOActive: []
   AnimObjects: []
+  LiqLevel: 0
+  ContainerLiquid: []
   ComparePos: []
+  RotationAngle: []
+  ObjToRotate: []
 --- !u!114 &7031872713938414170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19808,7 +19832,11 @@ MonoBehaviour:
   - {fileID: 795788060}
   GOActive: []
   AnimObjects: []
+  LiqLevel: 0
+  ContainerLiquid: []
   ComparePos: []
+  RotationAngle: []
+  ObjToRotate: []
 --- !u!54 &8713815021019240322
 Rigidbody:
   m_ObjectHideFlags: 0
