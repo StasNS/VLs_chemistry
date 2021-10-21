@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: "Assets/Scenes/\u0421hemical_Current_Sources.unity"
+    guid: a5316e66a793c744ba11d91b95dda760
   m_configObjects: {}
