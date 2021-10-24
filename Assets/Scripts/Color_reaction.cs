@@ -15,8 +15,8 @@ public class Color_reaction : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (GameObject.Find("Electrod1").transform.position == new Vector3(-1.772f, 1.8f, 0.233855f) &&
-        GameObject.Find("Electrod2").transform.position == new Vector3(-2.022f, 1.8f, 0.233855f) &&
+        if (GameObject.Find("Electrod1").transform.position == new Vector3(-1.772f, 1.77f, 0.233855f) &&
+        GameObject.Find("Electrod2").transform.position == new Vector3(-2.022f, 1.77f, 0.233855f) &&
         GameObject.Find("Akum").transform.position == new Vector3(-1.467300f, 1.535213f, -0.5064449f))
         {
             if (ischanged)

@@ -64,9 +64,9 @@ public class NewAnimFunc : MonoBehaviour
                         transform.gameObject.name = "WetPaper";
                         foreach (Transform child in children1)
                         {
-                            child.gameObject.GetComponent<Renderer>().material.color = new Color(0.4f,0.4f,0.4f);
+                            child.gameObject.GetComponent<Renderer>().material.color = new Color(0.4f, 0.4f, 0.4f);
                         }
-                        transform.GetComponent<Renderer>().material.color = new Color(0.4f,0.4f,0.4f);
+                        transform.GetComponent<Renderer>().material.color = new Color(0.4f, 0.4f, 0.4f);
                     }
                 }
                 #endregion
@@ -243,108 +243,109 @@ public class NewAnimFunc : MonoBehaviour
             startreact = false;
         }
     }
+
+    #region CustomEditor
+    [CustomEditor(typeof(NewAnimFunc))]
+    public class CustomScript : Editor
+    {
+        #region MoveParams
+        SerializedProperty MoveTo;
+        SerializedProperty Speed;
+        SerializedProperty _Action;
+        SerializedProperty _Conditions;
+        SerializedProperty Left;
+        SerializedProperty Right;
+        SerializedProperty AnimObjects;
+        SerializedProperty ComparePos;
+        SerializedProperty LiqLevel;
+        SerializedProperty GOActive;
+
+        #endregion
+        SerializedProperty ToChangeColor;
+        SerializedProperty ChangeTime;
+        SerializedProperty RotationAngle;
+        SerializedProperty ObjToRotate;
+        SerializedProperty ContainerLiquid;
+        void OnEnable()
+        {
+            #region MoveParEnable
+            MoveTo = serializedObject.FindProperty("MoveTo");
+            _Action = serializedObject.FindProperty("_Action");
+            Speed = serializedObject.FindProperty("Speed");
+            _Conditions = serializedObject.FindProperty("_Conditions");
+            Left = serializedObject.FindProperty("Left");
+            Right = serializedObject.FindProperty("Right");
+            AnimObjects = serializedObject.FindProperty("AnimObjects");
+            ComparePos = serializedObject.FindProperty("ComparePos");
+            LiqLevel = serializedObject.FindProperty("LiqLevel");
+            GOActive = serializedObject.FindProperty("GOActive");
+            #endregion
+
+            ToChangeColor = serializedObject.FindProperty("ToChangeColor");
+            ChangeTime = serializedObject.FindProperty("ChangeTime");
+            RotationAngle = serializedObject.FindProperty("RotationAngle");
+            ObjToRotate = serializedObject.FindProperty("ObjToRotate");
+            ContainerLiquid = serializedObject.FindProperty("ContainerLiquid");
+        }
+        public override void OnInspectorGUI()
+        {
+            serializedObject.Update();
+
+            #region _ActionEnum
+            EditorGUILayout.PropertyField(_Action);
+            if (_Action.enumValueIndex == 1) //Добавление в Move поле
+            {
+                EditorGUILayout.PropertyField(MoveTo);
+                EditorGUILayout.PropertyField(Speed);
+                EditorGUILayout.PropertyField(_Conditions);
+            }
+            if (_Action.enumValueIndex == 2)
+            {
+                EditorGUILayout.PropertyField(RotationAngle);
+                EditorGUILayout.PropertyField(ObjToRotate);
+                EditorGUILayout.PropertyField(Speed);
+                EditorGUILayout.PropertyField(_Conditions);
+            }
+            if (_Action.enumValueIndex == 3)
+            {
+                EditorGUILayout.PropertyField(ToChangeColor);
+                EditorGUILayout.PropertyField(ChangeTime);
+                EditorGUILayout.PropertyField(_Conditions);
+            }
+
+            #endregion
+            #region _ConditionEnum
+            if (_Conditions.enumValueIndex == 1)
+            {
+                EditorGUILayout.PropertyField(Left);
+                EditorGUILayout.PropertyField(Right);
+            }
+            if (_Conditions.enumValueIndex == 2)
+            {
+                EditorGUILayout.PropertyField(AnimObjects);
+            }
+            if (_Conditions.enumValueIndex == 3)
+            {
+                EditorGUILayout.PropertyField(GOActive);
+                EditorGUILayout.PropertyField(Left);
+                EditorGUILayout.PropertyField(Right);
+            }
+            if (_Conditions.enumValueIndex == 4)
+            {
+                EditorGUILayout.PropertyField(AnimObjects);
+                EditorGUILayout.PropertyField(ComparePos);
+            }
+            if (_Conditions.enumValueIndex == 9)
+            {
+                EditorGUILayout.PropertyField(Left);
+                EditorGUILayout.PropertyField(Right);
+                EditorGUILayout.PropertyField(ContainerLiquid);
+                EditorGUILayout.PropertyField(LiqLevel);
+            }
+            #endregion
+            serializedObject.ApplyModifiedProperties();
+        }
+    }
 }
-//     #region CustomEditor
-//     [CustomEditor(typeof(NewAnimFunc))]
-//     public class CustomScript : Editor
-//     {
-//         #region MoveParams
-//         SerializedProperty MoveTo;
-//         SerializedProperty Speed;
-//         SerializedProperty _Action;
-//         SerializedProperty _Conditions;
-//         SerializedProperty Left;
-//         SerializedProperty Right;
-//         SerializedProperty AnimObjects;
-//         SerializedProperty ComparePos;
-//         SerializedProperty LiqLevel;
-//         SerializedProperty GOActive;
+#endregion
 
-//         #endregion
-//         SerializedProperty ToChangeColor;
-//         SerializedProperty ChangeTime;
-//         SerializedProperty RotationAngle;
-//         SerializedProperty ObjToRotate;
-//         SerializedProperty ContainerLiquid;
-//         void OnEnable()
-//         {
-//             #region MoveParEnable
-//             MoveTo = serializedObject.FindProperty("MoveTo");
-//             _Action = serializedObject.FindProperty("_Action");
-//             Speed = serializedObject.FindProperty("Speed");
-//             _Conditions = serializedObject.FindProperty("_Conditions");
-//             Left = serializedObject.FindProperty("Left");
-//             Right = serializedObject.FindProperty("Right");
-//             AnimObjects = serializedObject.FindProperty("AnimObjects");
-//             ComparePos = serializedObject.FindProperty("ComparePos");
-//             LiqLevel = serializedObject.FindProperty("LiqLevel");
-//             GOActive = serializedObject.FindProperty("GOActive");
-//             #endregion
-
-//             ToChangeColor = serializedObject.FindProperty("ToChangeColor");
-//             ChangeTime = serializedObject.FindProperty("ChangeTime");
-//             RotationAngle = serializedObject.FindProperty("RotationAngle");
-//             ObjToRotate = serializedObject.FindProperty("ObjToRotate");
-//             ContainerLiquid = serializedObject.FindProperty("ContainerLiquid");
-//         }
-//         public override void OnInspectorGUI()
-//         {
-//             serializedObject.Update();
-
-//             #region _ActionEnum
-//             EditorGUILayout.PropertyField(_Action);
-//             if (_Action.enumValueIndex == 1) //Добавление в Move поле
-//             {
-//                 EditorGUILayout.PropertyField(MoveTo);
-//                 EditorGUILayout.PropertyField(Speed);
-//                 EditorGUILayout.PropertyField(_Conditions);
-//             }
-//             if (_Action.enumValueIndex == 2)
-//             {
-//                 EditorGUILayout.PropertyField(RotationAngle);
-//                 EditorGUILayout.PropertyField(ObjToRotate);
-//                 EditorGUILayout.PropertyField(Speed);
-//                 EditorGUILayout.PropertyField(_Conditions);
-//             }
-//             if (_Action.enumValueIndex == 3)
-//             {
-//                 EditorGUILayout.PropertyField(ToChangeColor);
-//                 EditorGUILayout.PropertyField(ChangeTime);
-//                 EditorGUILayout.PropertyField(_Conditions);
-//             }
-
-//             #endregion
-//             #region _ConditionEnum
-//             if (_Conditions.enumValueIndex == 1)
-//             {
-//                 EditorGUILayout.PropertyField(Left);
-//                 EditorGUILayout.PropertyField(Right);
-//             }
-//             if (_Conditions.enumValueIndex == 2)
-//             {
-//                 EditorGUILayout.PropertyField(AnimObjects);
-//             }
-//             if (_Conditions.enumValueIndex == 3)
-//             {
-//                 EditorGUILayout.PropertyField(GOActive);
-//                 EditorGUILayout.PropertyField(Left);
-//                 EditorGUILayout.PropertyField(Right);
-//             }
-//             if (_Conditions.enumValueIndex == 4)
-//             {
-//                 EditorGUILayout.PropertyField(AnimObjects);
-//                 EditorGUILayout.PropertyField(ComparePos);
-//             }
-//             if (_Conditions.enumValueIndex == 9)
-//             {
-//                 EditorGUILayout.PropertyField(Left);
-//                 EditorGUILayout.PropertyField(Right);
-//                 EditorGUILayout.PropertyField(ContainerLiquid);
-//                 EditorGUILayout.PropertyField(LiqLevel);
-//             }
-//             #endregion
-//             serializedObject.ApplyModifiedProperties();
-//         }
-//     }
-// }
-// #endregion

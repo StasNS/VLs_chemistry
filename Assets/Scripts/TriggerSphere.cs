@@ -35,7 +35,7 @@ public class TriggerSphere : MonoBehaviour
             if (isCorrectContainer)
             {
                 Vector3 direction = Сontainer[i].transform.position - transform.position;
-                
+
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), speed * Time.deltaTime);
 
                 if (angleY >= 0 && angleY < 60 || angleX >= 0 && angleX < 60)
@@ -69,10 +69,23 @@ public class TriggerSphere : MonoBehaviour
     private void WaterAnim(Transform _TriggeredObj)
     {
         var _liquid = _TriggeredObj.GetChild(0);
-        var getfiller = _liquid.GetComponent<Renderer>().material.GetFloat("LiqFill");     
-        var setfiller = getfiller+speedLiq * Time.deltaTime;
+        var getfiller = _liquid.GetComponent<Renderer>().material.GetFloat("LiqFill");
+        var setfiller = getfiller + speedLiq * Time.deltaTime;
 
-        _liquid.GetComponent<Renderer>().material.SetFloat("LiqFill",setfiller);
+        if (_TriggeredObj.childCount > 1)
+        {
+            var _liquid1 = _TriggeredObj.GetChild(1);
+            var _liquid2 = _TriggeredObj.GetChild(2);
+            var getfiller1 = _liquid1.GetComponent<Renderer>().material.GetFloat("LiqFill");
+            var getfiller2 = _liquid2.GetComponent<Renderer>().material.GetFloat("LiqFill");
+            var setfiller1 = getfiller1 + speedLiq * Time.deltaTime;
+            var setfiller2 = getfiller2 + speedLiq * Time.deltaTime;
+            if (getfiller >= 0.4f)
+            {
+                _liquid1.GetComponent<Renderer>().material.SetFloat("LiqFill", setfiller1);
+                _liquid2.GetComponent<Renderer>().material.SetFloat("LiqFill", setfiller2);
+            }
+        }
+        _liquid.GetComponent<Renderer>().material.SetFloat("LiqFill", setfiller);
     }
-
 }
