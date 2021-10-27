@@ -78,8 +78,8 @@ public class TriggerSphere : MonoBehaviour
             var _liquid2 = _TriggeredObj.GetChild(2);
             var getfiller1 = _liquid1.GetComponent<Renderer>().material.GetFloat("LiqFill");
             var getfiller2 = _liquid2.GetComponent<Renderer>().material.GetFloat("LiqFill");
-            var setfiller1 = getfiller1 + speedLiq * Time.deltaTime;
-            var setfiller2 = getfiller2 + speedLiq * Time.deltaTime;
+            var setfiller1 = getfiller1 + (speedLiq + 0.06f) * Time.deltaTime;
+            var setfiller2 = getfiller2 + (speedLiq + 0.06f) * Time.deltaTime;
             if (getfiller >= 0.4f)
             {
                 _liquid1.GetComponent<Renderer>().material.SetFloat("LiqFill", setfiller1);
