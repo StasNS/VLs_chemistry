@@ -24,6 +24,8 @@ public class CameraViews : MonoBehaviour
     }
     public void SideSwitch()
     {
-
+        Cam.transform.position = new Vector3(-0.669f,2.423f,0.89f);
+        currot.eulerAngles = new Vector3(30.258f,225.385f,0);
+        Cam.transform.rotation = currot;
     }
 }
