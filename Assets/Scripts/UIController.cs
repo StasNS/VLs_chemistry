@@ -28,7 +28,6 @@ public class UIController : MonoBehaviour
             iterator = -1;
             ButtonActrivator();
         }
-        else
         if (clickcount == -1)
         {
             _textField.text = "";
@@ -57,26 +56,12 @@ public class UIController : MonoBehaviour
             CheckEndOfText(iterator);
     }
     #endregion 
-    #region MainButtons
     public void Vvodnii_But()
     {
         GetText("ControlText");
         ButtonActrivator();
         Next();
     }
-    public void Metod_But()
-    {
-        GetText("MetodText");
-        ButtonActrivator();
-        Next();
-    }
-    public void Test()
-    {
-        GetText("Test");
-        ButtonActrivator();
-        Next();
-    }
-    #endregion
     private void ButtonActrivator()
     {
         foreach (var buttons in _button)
