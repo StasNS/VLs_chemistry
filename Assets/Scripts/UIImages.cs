@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +12,15 @@ public class UIImages : MonoBehaviour
     private List<Sprite> _imageInfo = new List<Sprite>();
     private int iterator = -1;
 
+    private List<Sprite> GetImages(string file_path)
+    {
+        var sprites = Resources.LoadAll(file_path,typeof(Sprite));    
+        foreach (var image in sprites)
+        {
+            _imageInfo.Add((Sprite)image);
+        }
+        return _imageInfo;
+    }
     #region TurnPages
     private void CheckEndOfText(int clickcount)
     {
@@ -33,7 +44,7 @@ public class UIImages : MonoBehaviour
         iterator++;
         if (iterator != _imageInfo.Count) //костыль
         {
-            _imageField.GetComponent<Image>().sprite  = _imageInfo[iterator];
+            _imageField.GetComponent<Image>().sprite = _imageInfo[iterator];
         }
         CheckEndOfText(iterator);
     }
@@ -50,6 +61,14 @@ public class UIImages : MonoBehaviour
     #endregion 
     public void Metod_but()
     {
+        GetImages("Chemical_Current");
+        _imageField.SetActive(true);
+        ButtonActrivator();
+        Next();
+    }
+    public void Vvodnii_but()
+    {
+        GetImages("BasicControlls");
         _imageField.SetActive(true);
         ButtonActrivator();
         Next();

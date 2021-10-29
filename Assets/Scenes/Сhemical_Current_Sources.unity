@@ -265,7 +265,7 @@ RectTransform:
   m_Children:
   - {fileID: 773494465}
   m_Father: {fileID: 1925198791}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -317,8 +317,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6553831132328304757}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: Vvodnii_But
+        m_TargetAssemblyTypeName: UIImages, Assembly-CSharp
+        m_MethodName: Vvodnii_but
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7223,7 +7223,7 @@ RectTransform:
   m_Children:
   - {fileID: 1421960066}
   m_Father: {fileID: 1925198791}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7275,8 +7275,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6553831132328304757}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: Metod_But
+        m_TargetAssemblyTypeName: UIImages, Assembly-CSharp
+        m_MethodName: Metod_but
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7356,7 +7356,7 @@ RectTransform:
   m_Children:
   - {fileID: 1669460682}
   m_Father: {fileID: 1925198791}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -7384,10 +7384,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0, g: 1, b: 0, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
+    m_SelectedColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -7403,12 +7403,12 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 714178390}
+  m_TargetGraphic: {fileID: 1017585912}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6553831132328304757}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_TargetAssemblyTypeName: UIImages, Assembly-CSharp
         m_MethodName: Prev
         m_Mode: 1
         m_Arguments:
@@ -7432,7 +7432,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8375,7 +8375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -8786,11 +8786,11 @@ RectTransform:
   m_Children:
   - {fileID: 972837720}
   m_Father: {fileID: 1925198791}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -49.5, y: 19}
+  m_AnchoredPosition: {x: -49, y: 19}
   m_SizeDelta: {x: 100, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1017585911
@@ -8814,10 +8814,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0, g: 1, b: 0, a: 1}
-    m_PressedColor: {r: 1, g: 1, b: 0, a: 1}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 1}
+    m_HighlightedColor: {r: 0.5188679, g: 0.5188679, b: 0.5188679, a: 1}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
+    m_SelectedColor: {r: 0.41509432, g: 0.41509432, b: 0.41509432, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -8838,7 +8838,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6553831132328304757}
-        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_TargetAssemblyTypeName: UIImages, Assembly-CSharp
         m_MethodName: Next
         m_Mode: 1
         m_Arguments:
@@ -9270,7 +9270,7 @@ RectTransform:
   m_Children:
   - {fileID: 1879853301}
   m_Father: {fileID: 1925198791}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -15371,7 +15371,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -15567,85 +15567,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0013578173, y: 0.009470637, z: 0.019890381}
   m_Center: {x: 0.01, y: -0.00020908967, z: 0.0024646805}
---- !u!1 &1735832841
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1735832842}
-  - component: {fileID: 1735832844}
-  - component: {fileID: 1735832843}
-  m_Layer: 5
-  m_Name: Hint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1735832842
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735832841}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1925198791}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 17}
-  m_SizeDelta: {x: 509, y: 270}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1735832843
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735832841}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 4544f356541a3cd439aea536c03e27f5, type: 3}
-    m_FontSize: 100
-    m_FontStyle: 0
-    m_BestFit: 1
-    m_MinSize: 0
-    m_MaxSize: 100
-    m_Alignment: 4
-    m_AlignByGeometry: 1
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 
---- !u!222 &1735832844
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735832841}
-  m_CullTransparentMesh: 1
 --- !u!1 &1738289477
 GameObject:
   m_ObjectHideFlags: 0
@@ -16009,7 +15930,7 @@ GameObject:
   - component: {fileID: 1849028324}
   - component: {fileID: 1849028323}
   m_Layer: 5
-  m_Name: Metod_Images
+  m_Name: Images
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16027,12 +15948,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 1925198791}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 509, y: 310}
+  m_AnchoredPosition: {x: 0, y: 18}
+  m_SizeDelta: {x: 509, y: 274.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1849028323
 MonoBehaviour:
@@ -16363,7 +16284,6 @@ RectTransform:
   m_LocalScale: {x: 0.001, y: 0.001, z: -0}
   m_Children:
   - {fileID: 1369393087}
-  - {fileID: 1735832842}
   - {fileID: 1849028322}
   - {fileID: 1017585910}
   - {fileID: 714178388}
@@ -20284,8 +20204,8 @@ GameObject:
   - component: {fileID: 6508183051684681022}
   - component: {fileID: 1727377885136870476}
   - component: {fileID: 7851548827582965321}
-  - component: {fileID: 6553831132328304757}
   - component: {fileID: 6553831132328304758}
+  - component: {fileID: 6553831132328304757}
   m_Layer: 2
   m_Name: Monitor_1
   m_TagString: Untagged
@@ -20302,20 +20222,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6553831132328304756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c5be6d2c1659474cadd2c02f31604e4, type: 3}
+  m_Script: {fileID: 11500000, guid: b20e26e1ebc8842409954e90f4a2c32c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _textField: {fileID: 1735832843}
   _imageField: {fileID: 1849028321}
   _button:
   - {fileID: 1017585911}
   - {fileID: 714178389}
   - {fileID: 40836302}
   - {fileID: 695174919}
-  _images:
-  - {fileID: 21300000, guid: 2dc0f5532d794794abcee612072b4064, type: 3}
-  - {fileID: 21300000, guid: 748fe72765b90da458464818f87135f2, type: 3}
-  - {fileID: 21300000, guid: 21368de4405d3d846a4109646371be0d, type: 3}
 --- !u!114 &6553831132328304758
 MonoBehaviour:
   m_ObjectHideFlags: 0
