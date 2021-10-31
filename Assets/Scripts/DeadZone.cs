@@ -20,8 +20,6 @@ public class DeadZone : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        timer += Time.deltaTime;
-
         if (timer > waitTime)
         {
             message.text = "";
@@ -31,6 +29,7 @@ public class DeadZone : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        timer += Time.deltaTime;
         for (int i = 0; i < deadObj.Count; i++)
         {
             if (other.gameObject.name == deadObj[i].name)

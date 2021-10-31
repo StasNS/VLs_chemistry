@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Electrolysis_of_Salt_Solutions.unity
+- path: Assets/Scenes/Secundomer.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
