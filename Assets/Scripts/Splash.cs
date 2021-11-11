@@ -5,14 +5,21 @@ using UnityEngine;
 public class Splash : MonoBehaviour
 {
     [SerializeField] private GameObject prob;
+    [SerializeField] private GameObject kolbaForTube;
     [SerializeField] private float speed;
     [SerializeField] private float blobspeed;
     [SerializeField] private GameObject place_Prob;
     [SerializeField] private GameObject blob;
+    [SerializeField] private Vector3 blobTarget;
     [SerializeField] private Vector3 rot_Angle;
-    private Quaternion startedAngle = new Quaternion(-0.5f,-0.5f,-0.5f,0.5f);
+    private Quaternion startedAngle = new Quaternion(-0.5f, -0.5f, -0.5f, 0.5f);
     private bool there = false;
     private bool back = false;
+    private Vector3 blobPosStart;
+    private void Start()
+    {
+        blobPosStart = blob.transform.position;
+    }
     private void FixedUpdate()
     {
         if (prob.transform.position == place_Prob.transform.position)
@@ -24,7 +31,7 @@ public class Splash : MonoBehaviour
 
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity, 1, QueryTriggerInteraction.Ignore))
                 {
-                    if (hit.transform.gameObject == GameObject.Find("Smesitel"))
+                    if (hit.transform.gameObject == kolbaForTube)
                     {
                         there = true;
                     }
@@ -39,13 +46,13 @@ public class Splash : MonoBehaviour
         {
             Reverse(startedAngle);
         }
-        if(blob.activeInHierarchy)
+        if (blob.activeInHierarchy)
         {
-            blob.transform.position = Vector3.MoveTowards(blob.transform.position, new Vector3(-1.65310001f,1.40339994f,0.268000007f), blobspeed * Time.deltaTime);
-            if(blob.transform.position == new Vector3(-1.65310001f,1.40339994f,0.268000007f))
+            blob.transform.position = Vector3.MoveTowards(blob.transform.position, blobTarget, blobspeed * Time.deltaTime);
+            if (blob.transform.position == blobTarget)
             {
                 blob.SetActive(false);
-                blob.transform.position = new Vector3(-1.65310001f,1.71780002f,0.268000007f);
+                blob.transform.position = blobPosStart;
             }
         }
     }
