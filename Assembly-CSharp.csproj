@@ -50,14 +50,14 @@
      <Compile Include="Assets\Scripts\SpecialPaperMove.cs" />
      <Compile Include="Assets\Scripts\TriggerSphere.cs" />
      <Compile Include="Assets\Scripts\UIController.cs" />
+     <Compile Include="Assets\Scripts\Secundomer.cs" />
      <Compile Include="Assets\Scripts\CableParticle.cs" />
      <Compile Include="Assets\Scripts\Desrciption.cs" />
      <Compile Include="Assets\Scripts\Splash.cs" />
      <Compile Include="Assets\Scripts\NewDragNDrop.cs" />
      <Compile Include="Assets\Scripts\CableComponent.cs" />
      <Compile Include="Assets\Scripts\Test.cs" />
-     <Compile Include="Assets\Scripts\Secundomer.cs" />
-     <Compile Include="Assets\Scripts\ResultKostil.cs" />
+     <Compile Include="Assets\Scripts\ReactionSplash.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
