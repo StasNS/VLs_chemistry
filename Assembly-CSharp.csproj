@@ -58,8 +58,6 @@
      <Compile Include="Assets\Scripts\NewDragNDrop.cs" />
      <Compile Include="Assets\Scripts\CableComponent.cs" />
      <Compile Include="Assets\Scripts\Test.cs" />
-     <Compile Include="Assets\Scripts\MagnetField.cs" />
-     <Compile Include="Assets\Scripts\TeslaValue.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
