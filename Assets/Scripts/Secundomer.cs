@@ -9,9 +9,10 @@ public class Secundomer : MonoBehaviour
     private int min = 0;
     private Text timerText;
     private int delta = 0;
+
     private void Start()
     {
-        timerText = GameObject.Find("timer").GetComponent<Text>();
+        timerText = GameObject.Find("Timer").GetComponent<Text>();
         StartCoroutine(TimeFlow());
     }
 
@@ -29,12 +30,14 @@ public class Secundomer : MonoBehaviour
             yield return new WaitForSeconds(1);
         }
     }
-    public void StartStop(int _delta)
+    public void StartStop(int delta)
     {
-        _delta = delta;
+        this.delta = delta;
     }
     public void Reset()
     {
-        timerText.text = " " + " : " + " ";
+        sec = 0;
+        min = 0;
+        timerText.text = "00" + " : " + "00";
     }
 }

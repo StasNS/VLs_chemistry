@@ -109,7 +109,7 @@ Material:
     - _ZWrite: 1
     - noise_vect: 0
     m_Colors:
-    - Color_2f1d6033de114cf1b1c66506ea2c79c4: {r: 0.012344122, g: 1, b: 0, a: 0}
+    - Color_2f1d6033de114cf1b1c66506ea2c79c4: {r: 0, g: 0, b: 0, a: 0}
     - Color_58bdfa1a4448419e8ddf15ca52661575: {r: 0.6226415, g: 0.54382634, b: 0.14391243, a: 0}
     - Color_65db5485134e4a229367f20e14d48712: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

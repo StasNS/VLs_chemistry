@@ -29,7 +29,6 @@ public class Splash : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 

@@ -6,7 +6,6 @@ public class TriggerPlace : MonoBehaviour
 {
     public GameObject Standed;
     public string RenamedObj;
-
     private void FixedUpdate()
     {
         var Used = GameObject.Find("Main Camera").GetComponent<NewDragNDrop>().Selected;
